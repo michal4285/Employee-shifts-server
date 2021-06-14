@@ -1,0 +1,6 @@
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\bin\Debug\DTO.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\bin\Debug\DTO.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.pdb

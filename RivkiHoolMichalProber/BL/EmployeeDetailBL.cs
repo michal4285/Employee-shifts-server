@@ -23,5 +23,19 @@ namespace BL
             return currentEmployee != null;
 
         }
+
+        public static bool Register(DTO.EmployeeDetail employeeDetail)
+        {
+            try
+            {
+
+                DAL.EmployeeDetailDal.createEmployee(Converters.Converter.ConvertToEntity<DTO.EmployeeDetail,DAL.EmployeeDetail>(employeeDetail));
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

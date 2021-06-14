@@ -1,0 +1,12 @@
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
