@@ -1,0 +1,16 @@
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.csprojAssemblyReference.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\BL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\BL.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\DAL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\DTO.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\DAL.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\DAL.dll.config
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\DTO.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.xml
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.csproj.CopyComplete
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.xml
