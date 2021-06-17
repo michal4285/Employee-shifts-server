@@ -37,5 +37,31 @@ namespace BL
                 return false;
             }
         }
+        public static bool UpDate(int id,string value)
+        {
+            try
+            {
+
+                DAL.EmployeeDetailDal.update(id,value);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public static bool delete(int id)
+        {
+            try
+            {
+
+                DAL.EmployeeDetailDal.delete(id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -14,3 +14,19 @@ Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.dll
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\obj\Debug\BL.pdb
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.dll
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\BL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\BL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\DAL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\DTO.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\DAL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\DAL.dll.config
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\DTO.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\obj\Debug\BL.csproj.CopyComplete
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\obj\Debug\BL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\BL\obj\Debug\BL.pdb

@@ -4,3 +4,9 @@ Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csproj
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.dll
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DTO\obj\Debug\DTO.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\bin\Debug\DTO.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\bin\Debug\DTO.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.pdb

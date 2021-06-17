@@ -29,13 +29,15 @@ namespace WebApi.Controllers
         }
 
         // PUT api/employee/:id
-        public void Put(int id, [FromBody]string value)
+        public bool Put(int id, [FromBody]string value)
         {
+             return BL.EmployeeDetailBL.UpDate(id, value);
         }
 
         // DELETE api/employee/5
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+           return BL.EmployeeDetailBL.delete(id);
         }
     }
 }

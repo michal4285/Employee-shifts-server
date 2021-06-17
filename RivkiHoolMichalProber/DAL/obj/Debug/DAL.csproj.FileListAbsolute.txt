@@ -10,3 +10,15 @@ Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
 Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb

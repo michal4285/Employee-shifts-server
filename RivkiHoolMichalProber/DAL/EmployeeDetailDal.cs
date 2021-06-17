@@ -31,5 +31,26 @@ namespace DAL
                 return DB.EmployeeDetails.FirstOrDefault(e=>e.employeeEmail==email&&e.employeePassword==password);
             }
         }
+        public static void createEmployee(EmployeeDetail employeeDetail)
+        {
+            using (Entities1 DB = new Entities1())
+            {
+                 DB.EmployeeDetails.Add(employeeDetail);
+            }
+        }
+        public static void update(int id,string value)
+        {
+            using (Entities1 DB = new Entities1())
+            {
+                 DB.EmployeeDetails.FirstOrDefault(e=>e.employeeId==id).employeePassword=value;
+            }
+        }
+        public static void delete(int id)
+        {
+            using (Entities1 DB = new Entities1())
+            {
+                DB.EmployeeDetails.Remove(DB.EmployeeDetails.FirstOrDefault(e=>e.employeeId==id));
+            }
+        }
     }
 }
