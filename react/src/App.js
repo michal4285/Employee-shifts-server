@@ -11,10 +11,20 @@ function App() {
   })
     .then(res => res.json())
 
+//   const SignIn=()=>{
+//   debugger;
+//   fetch(`http://localhost:64551/api/employee/Get`, {
+//     method: 'GET',
+//     // body: JSON.stringify({})
+// })
+//   .then(res => res.json()).then(data=>{console.log(data) 
+//     if(data)
+//     setuser(data)}).catch(err=>console.log(err.message))
+// }
   return (
     <>
       <Login />
-      <Register />
+      {/* <Register /> */}
     </>
   );
 }
