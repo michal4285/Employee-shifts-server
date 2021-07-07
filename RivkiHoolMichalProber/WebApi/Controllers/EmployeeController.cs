@@ -7,19 +7,21 @@ using System.Web.Http;
 
 namespace WebApi.Controllers
 {
+
     public class EmployeeController : ApiController
     {
         // GET api/Employee
         public IEnumerable<DTO.EmployeeDetail> Get()
         {
-            return  BL.EmployeeDetailBL.GetEmployeeDetail();
+            return BL.EmployeeDetailBL.GetEmployeeDetail();
         }
 
         // GET api/employee/:email/:password
-
-        public bool Login(string email,string password)
+        [HttpGet]
+        [Route("api/Employee/Login")]
+        public bool Login(string email, string password)
         {
-            return  BL.EmployeeDetailBL.CheckLogin(email,password);
+            return BL.EmployeeDetailBL.CheckLogin(email, password);
         }
 
 
@@ -32,13 +34,13 @@ namespace WebApi.Controllers
         // PUT api/employee/:id
         public bool Put(int id, [FromBody]string value)
         {
-             return BL.EmployeeDetailBL.UpDate(id, value);
+            return BL.EmployeeDetailBL.UpDate(id, value);
         }
 
         // DELETE api/employee/5
         public bool Delete(int id)
         {
-           return BL.EmployeeDetailBL.delete(id);
+            return BL.EmployeeDetailBL.delete(id);
         }
     }
 }

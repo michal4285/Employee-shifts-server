@@ -22,3 +22,14 @@ C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.Core
 C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
 C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb

@@ -36,6 +36,8 @@ namespace DAL
             using (Entities1 DB = new Entities1())
             {
                  DB.EmployeeDetails.Add(employeeDetail);
+                DB.SaveChanges();
+
             }
         }
         public static void update(int id,string value)
