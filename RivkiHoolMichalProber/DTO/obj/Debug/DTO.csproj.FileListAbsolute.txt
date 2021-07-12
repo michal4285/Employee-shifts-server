@@ -15,3 +15,9 @@ C:\finelProject\FinalProject\RivkiHoolMichalProber\DTO\bin\Debug\DTO.pdb
 C:\finelProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
 C:\finelProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.dll
 C:\finelProject\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.pdb
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\bin\Debug\DTO.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\bin\Debug\DTO.pdb
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DTO\obj\Debug\DTO.pdb

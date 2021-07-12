@@ -8,4 +8,5 @@ namespace DAL
 {
     public interface IConvertable { }
     partial class EmployeeDetail : IConvertable { }
+    partial class Dialogue : IConvertable { }
 }

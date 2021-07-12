@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Converters\Converter.cs" />
+    <Compile Include="DialogueBL.cs" />
     <Compile Include="EmployeeDetailBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

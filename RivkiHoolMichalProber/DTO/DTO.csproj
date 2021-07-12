@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Dialogue.cs" />
     <Compile Include="EmployeeDetail.cs" />
     <Compile Include="IConvertable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

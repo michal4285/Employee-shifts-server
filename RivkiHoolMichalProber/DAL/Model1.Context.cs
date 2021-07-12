@@ -19,7 +19,8 @@ namespace DAL
     {
         public Entities1()
              //: base("name=Entities1")
-             : base("name=Entitieshome")
+             //: base("name=Entitieshome")
+              : base("name=EntitieshomeR")
         {
         }
     

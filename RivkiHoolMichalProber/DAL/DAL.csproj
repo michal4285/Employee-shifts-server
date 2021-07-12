@@ -58,6 +58,7 @@
     <Compile Include="Dialogue.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DialogueDal.cs" />
     <Compile Include="EmployeeDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

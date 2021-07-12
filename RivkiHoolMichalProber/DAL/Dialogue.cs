@@ -14,12 +14,27 @@ namespace DAL
     
     public partial class Dialogue
     {
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public Dialogue()
+        //{
+        //    this.dialogueId
+        //    //this.EmployeeInInstitutions = new HashSet<EmployeeInInstitution>();
+        //    //this.InstitutionDtails = new HashSet<InstitutionDtail>();
+        //}
+
         public int dialogueId { get; set; }
         public Nullable<int> employeeInInstitutionId { get; set; }
         public string status { get; set; }
         public string text { get; set; }
         public Nullable<System.DateTime> date { get; set; }
-    
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<EmployeeInInstitution> EmployeeInInstitutions { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        
+
         public virtual EmployeeInInstitution EmployeeInInstitution { get; set; }
     }
 }
+////
+
+    
