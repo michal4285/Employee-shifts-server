@@ -42,7 +42,8 @@ export default function SignIn() {
   const [email, setemail] = useState()
   const [user, setuser] = useState()
 
-const SignIn=()=>{
+const Signin=()=>{
+   
   debugger;
   fetch(`http://localhost:64551/api/employee/Login${email}/${password}`, {
     method: 'GET',
@@ -91,17 +92,16 @@ const SignIn=()=>{
             onChange={(e) => setpassward(e.target.value)}
 
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
-            type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e) => SignIn()}
+            onClick={() => Signin()}
           >
             Sign In
           </Button>
