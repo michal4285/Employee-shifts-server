@@ -1,0 +1,384 @@
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\API.dll.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\API.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\API.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csc.exe
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csc.exe.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csc.rsp
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csi.exe
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csi.exe.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\csi.rsp
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.AppContext.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Console.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.IO.Compression.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.IO.Pipes.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Claims.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.ValueTuple.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Xml.XPath.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\vbc.exe
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\vbc.exe.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\vbc.rsp
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Antlr3.Runtime.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\BL.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\DTO.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Newtonsoft.Json.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Net.Http.Formatting.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Helpers.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.WebHost.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Mvc.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Optimization.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Razor.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\WebGrease.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\DAL.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\EntityFramework.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\BL.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\DTO.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Newtonsoft.Json.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Net.Http.Formatting.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Helpers.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.WebHost.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Mvc.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Optimization.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Razor.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Antlr3.Runtime.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\DAL.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\DAL.dll.config
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\EntityFramework.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\MeetingManagementBoard\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\MeetingManagementBoard\API\obj\Debug\API.csproj.CopyComplete
+C:\Users\USER\Desktop\MeetingManagementBoard\API\obj\Debug\API.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\obj\Debug\API.pdb
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\EntityFramework.SqlServer.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\API.dll.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\API.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\API.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csc.exe
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csc.exe.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csc.rsp
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csi.exe
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csi.exe.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\csi.rsp
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.CSharp.Core.targets
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.Managed.Core.targets
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.AppContext.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Collections.Immutable.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Console.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.IO.Compression.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.IO.FileSystem.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.IO.Pipes.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Reflection.Metadata.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.AccessControl.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Claims.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Security.Principal.Windows.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.ValueTuple.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Xml.ReaderWriter.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Xml.XmlDocument.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Xml.XPath.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\vbc.exe
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\vbc.exe.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\vbc.rsp
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\VBCSCompiler.exe
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\roslyn\VBCSCompiler.exe.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Antlr3.Runtime.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\BL.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\DTO.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\EntityFramework.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\EntityFramework.SqlServer.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Microsoft.Web.Infrastructure.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Newtonsoft.Json.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Net.Http.Formatting.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Helpers.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.WebHost.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Mvc.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Optimization.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Razor.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.Deployment.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.Razor.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\WebGrease.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\DAL.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\BL.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\DTO.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\EntityFramework.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\EntityFramework.SqlServer.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Newtonsoft.Json.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Net.Http.Formatting.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Helpers.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.WebHost.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Mvc.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Optimization.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Razor.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.Deployment.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.WebPages.Razor.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Antlr3.Runtime.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\DAL.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\DAL.dll.config
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\obj\Debug\API.csprojAssemblyReference.cache
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\obj\Debug\API.csproj.CopyComplete
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\obj\Debug\API.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\obj\Debug\API.pdb
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Cors.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.Cors.dll
+Y:\תשפא\2\קלרמן דינה\MeetingManagementBoard\API\bin\System.Web.Http.Cors.xml
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Cors.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.Cors.dll
+C:\Users\USER\Desktop\MeetingManagementBoard\API\bin\System.Web.Http.Cors.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\API.dll.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\API.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\API.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csc.exe
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csc.exe.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csc.rsp
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csi.exe
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csi.exe.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\csi.rsp
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.AppContext.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Console.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.IO.Compression.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.IO.Pipes.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Claims.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.ValueTuple.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Xml.XPath.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\vbc.exe
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\vbc.exe.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\vbc.rsp
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\VBCSCompiler.exe
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Antlr3.Runtime.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\BL.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\DTO.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\EntityFramework.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\EntityFramework.SqlServer.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Newtonsoft.Json.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Net.Http.Formatting.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Cors.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Helpers.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.Cors.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.WebHost.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Mvc.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Optimization.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Razor.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.Deployment.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.Razor.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\WebGrease.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\DAL.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\BL.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\BL.dll.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\DTO.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\EntityFramework.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\EntityFramework.SqlServer.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Net.Http.Formatting.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.Cors.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Newtonsoft.Json.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Helpers.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Http.WebHost.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Mvc.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Optimization.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.Razor.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.Deployment.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\System.Web.WebPages.Razor.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Antlr3.Runtime.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\DAL.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\bin\DAL.dll.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\obj\Debug\API.csproj.CopyComplete
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\obj\Debug\API.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\API\obj\Debug\API.pdb
+C:\schdule\Employee-shifts-server\API\bin\API.dll.config
+C:\schdule\Employee-shifts-server\API\bin\API.dll
+C:\schdule\Employee-shifts-server\API\bin\API.pdb
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csc.exe
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csc.exe.config
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csc.rsp
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csi.exe
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csi.exe.config
+C:\schdule\Employee-shifts-server\API\bin\roslyn\csi.rsp
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.Managed.Core.targets
+C:\schdule\Employee-shifts-server\API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.AppContext.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Collections.Immutable.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Console.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.IO.Compression.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.IO.FileSystem.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.IO.Pipes.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Reflection.Metadata.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.AccessControl.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Claims.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Security.Principal.Windows.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.ValueTuple.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Xml.XmlDocument.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Xml.XPath.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\schdule\Employee-shifts-server\API\bin\roslyn\vbc.exe
+C:\schdule\Employee-shifts-server\API\bin\roslyn\vbc.exe.config
+C:\schdule\Employee-shifts-server\API\bin\roslyn\vbc.rsp
+C:\schdule\Employee-shifts-server\API\bin\roslyn\VBCSCompiler.exe
+C:\schdule\Employee-shifts-server\API\bin\roslyn\VBCSCompiler.exe.config
+C:\schdule\Employee-shifts-server\API\bin\Antlr3.Runtime.dll
+C:\schdule\Employee-shifts-server\API\bin\BL.dll
+C:\schdule\Employee-shifts-server\API\bin\DTO.dll
+C:\schdule\Employee-shifts-server\API\bin\EntityFramework.dll
+C:\schdule\Employee-shifts-server\API\bin\EntityFramework.SqlServer.dll
+C:\schdule\Employee-shifts-server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\schdule\Employee-shifts-server\API\bin\Microsoft.Web.Infrastructure.dll
+C:\schdule\Employee-shifts-server\API\bin\Newtonsoft.Json.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Net.Http.Formatting.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Cors.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Helpers.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.Cors.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.WebHost.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Mvc.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Optimization.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Razor.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.Deployment.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.dll
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.Razor.dll
+C:\schdule\Employee-shifts-server\API\bin\WebGrease.dll
+C:\schdule\Employee-shifts-server\API\bin\DAL.dll
+C:\schdule\Employee-shifts-server\API\bin\BL.pdb
+C:\schdule\Employee-shifts-server\API\bin\BL.dll.config
+C:\schdule\Employee-shifts-server\API\bin\DTO.pdb
+C:\schdule\Employee-shifts-server\API\bin\EntityFramework.xml
+C:\schdule\Employee-shifts-server\API\bin\EntityFramework.SqlServer.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Net.Http.Formatting.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.Cors.xml
+C:\schdule\Employee-shifts-server\API\bin\Newtonsoft.Json.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Helpers.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Http.WebHost.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Mvc.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Optimization.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.Razor.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.Deployment.xml
+C:\schdule\Employee-shifts-server\API\bin\System.Web.WebPages.Razor.xml
+C:\schdule\Employee-shifts-server\API\bin\Antlr3.Runtime.pdb
+C:\schdule\Employee-shifts-server\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\schdule\Employee-shifts-server\API\bin\DAL.pdb
+C:\schdule\Employee-shifts-server\API\bin\DAL.dll.config
+C:\schdule\Employee-shifts-server\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\schdule\Employee-shifts-server\API\obj\Debug\API.csproj.CopyComplete
+C:\schdule\Employee-shifts-server\API\obj\Debug\API.dll
+C:\schdule\Employee-shifts-server\API\obj\Debug\API.pdb

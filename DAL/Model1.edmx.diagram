@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0dd39d146f58430198c5312d13d98ffb" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Constraints" Width="1.5" PointX="9.75" PointY="11.125" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Dialogue" Width="1.5" PointX="9.75" PointY="20.125" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeDetails" Width="1.5" PointX="0.75" PointY="9.375" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeInInstitution" Width="1.5" PointX="7.5" PointY="11.75" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeLimit" Width="1.5" PointX="9.75" PointY="14.25" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeShifts" Width="1.5" PointX="12.75" PointY="14.5" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.InstitutionDtails" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.ShiftInstitution" Width="1.5" PointX="5.25" PointY="16.625" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_Constraints_EmployeeInInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_Dialogue_EmployeeInInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_EmployeeDetails" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_InstitutionDtails_EmployeeDetails" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_FieldOfWorkInInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_InstitutionDtails" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution1" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeSchedule_EmployeeInInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_ShiftInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_EmployeeSchedule_ShiftInstitution" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_FieldOfWorkInInstitution_InstitutionDtails" />
+        <AssociationConnector Association="RivkiHoolMichalProberModel.FK_ShiftInstitution_InstitutionDtails" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

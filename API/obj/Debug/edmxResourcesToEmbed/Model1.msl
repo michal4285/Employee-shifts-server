@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MeetingManagementBoardModelStoreContainer" CdmEntityContainer="MeetingManagementBoardEntities1">
+    <EntitySetMapping Name="GroupManager">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.GroupManager">
+        <MappingFragment StoreEntitySet="GroupManager">
+          <ScalarProperty Name="GroupManagerId" ColumnName="GroupManagerId" />
+          <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+          <ScalarProperty Name="GroupManagerName" ColumnName="GroupManagerName" />
+          <ScalarProperty Name="GroupManagerDescribe" ColumnName="GroupManagerDescribe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manager">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.Manager">
+        <MappingFragment StoreEntitySet="Manager">
+          <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="ManagerPassword" ColumnName="ManagerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meeting">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.Meeting">
+        <MappingFragment StoreEntitySet="Meeting">
+          <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+          <ScalarProperty Name="GroupManagerId" ColumnName="GroupManagerId" />
+          <ScalarProperty Name="MeetingName" ColumnName="MeetingName" />
+          <ScalarProperty Name="MeetingGoal" ColumnName="MeetingGoal" />
+          <ScalarProperty Name="MeetingTime" ColumnName="MeetingTime" />
+          <ScalarProperty Name="MeetingFinalDate" ColumnName="MeetingFinalDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeetingMember">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.MeetingMember">
+        <MappingFragment StoreEntitySet="MeetingMember">
+          <ScalarProperty Name="MeetingMemberId" ColumnName="MeetingMemberId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="GroupManagerId" ColumnName="GroupManagerId" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="MemberPhone" ColumnName="MemberPhone" />
+          <ScalarProperty Name="MemberMail" ColumnName="MemberMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PossibleMeetingDate">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.PossibleMeetingDate">
+        <MappingFragment StoreEntitySet="PossibleMeetingDate">
+          <ScalarProperty Name="PossibleMeetingDateId" ColumnName="PossibleMeetingDateId" />
+          <ScalarProperty Name="PossibleDateTime" ColumnName="PossibleDateTime" />
+          <ScalarProperty Name="MeetingId" ColumnName="MeetingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubscriptionPossibleDate">
+      <EntityTypeMapping TypeName="MeetingManagementBoardModel.SubscriptionPossibleDate">
+        <MappingFragment StoreEntitySet="SubscriptionPossibleDate">
+          <ScalarProperty Name="SubscriptionPossibleDateId" ColumnName="SubscriptionPossibleDateId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="PossibleMeetingDateId" ColumnName="PossibleMeetingDateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

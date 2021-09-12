@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MeetingManagementBoardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GroupManager">
+    <Key>
+      <PropertyRef Name="GroupManagerId" />
+    </Key>
+    <Property Name="GroupManagerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerId" Type="int" />
+    <Property Name="GroupManagerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupManagerDescribe" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ManagerId" />
+    </Key>
+    <Property Name="ManagerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManagerPassword" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Meeting">
+    <Key>
+      <PropertyRef Name="MeetingId" />
+    </Key>
+    <Property Name="MeetingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupManagerId" Type="int" />
+    <Property Name="MeetingName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MeetingGoal" Type="nvarchar" MaxLength="50" />
+    <Property Name="MeetingTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="MeetingFinalDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MeetingMember">
+    <Key>
+      <PropertyRef Name="MeetingMemberId" />
+    </Key>
+    <Property Name="MeetingMemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="MeetingId" Type="int" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupManagerId" Type="int" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MemberPhone" Type="nchar" MaxLength="10" />
+    <Property Name="MemberMail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PossibleMeetingDate">
+    <Key>
+      <PropertyRef Name="PossibleMeetingDateId" />
+    </Key>
+    <Property Name="PossibleMeetingDateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PossibleDateTime" Type="datetime" />
+    <Property Name="MeetingId" Type="int" />
+  </EntityType>
+  <EntityType Name="SubscriptionPossibleDate">
+    <Key>
+      <PropertyRef Name="SubscriptionPossibleDateId" />
+    </Key>
+    <Property Name="SubscriptionPossibleDateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="PossibleMeetingDateId" Type="int" />
+  </EntityType>
+  <Association Name="FK_GroupManager_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+    <End Role="GroupManager" Type="Self.GroupManager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ManagerId" />
+      </Principal>
+      <Dependent Role="GroupManager">
+        <PropertyRef Name="ManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Meeting_GroupManager">
+    <End Role="GroupManager" Type="Self.GroupManager" Multiplicity="0..1" />
+    <End Role="Meeting" Type="Self.Meeting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupManager">
+        <PropertyRef Name="GroupManagerId" />
+      </Principal>
+      <Dependent Role="Meeting">
+        <PropertyRef Name="GroupManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MeetingMember_Meeting">
+    <End Role="Meeting" Type="Self.Meeting" Multiplicity="0..1" />
+    <End Role="MeetingMember" Type="Self.MeetingMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meeting">
+        <PropertyRef Name="MeetingId" />
+      </Principal>
+      <Dependent Role="MeetingMember">
+        <PropertyRef Name="MeetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MeetingMember_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="MeetingMember" Type="Self.MeetingMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="MeetingMember">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_GroupManager">
+    <End Role="GroupManager" Type="Self.GroupManager" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupManager">
+        <PropertyRef Name="GroupManagerId" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="GroupManagerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PossibleMeetingDate_Meeting">
+    <End Role="Meeting" Type="Self.Meeting" Multiplicity="0..1" />
+    <End Role="PossibleMeetingDate" Type="Self.PossibleMeetingDate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meeting">
+        <PropertyRef Name="MeetingId" />
+      </Principal>
+      <Dependent Role="PossibleMeetingDate">
+        <PropertyRef Name="MeetingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionPossibleDate_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="SubscriptionPossibleDate" Type="Self.SubscriptionPossibleDate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="SubscriptionPossibleDate">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionPossibleDate_PossibleMeetingDate">
+    <End Role="PossibleMeetingDate" Type="Self.PossibleMeetingDate" Multiplicity="0..1" />
+    <End Role="SubscriptionPossibleDate" Type="Self.SubscriptionPossibleDate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PossibleMeetingDate">
+        <PropertyRef Name="PossibleMeetingDateId" />
+      </Principal>
+      <Dependent Role="SubscriptionPossibleDate">
+        <PropertyRef Name="PossibleMeetingDateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MeetingManagementBoardModelStoreContainer">
+    <EntitySet Name="GroupManager" EntityType="Self.GroupManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Meeting" EntityType="Self.Meeting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MeetingMember" EntityType="Self.MeetingMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PossibleMeetingDate" EntityType="Self.PossibleMeetingDate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubscriptionPossibleDate" EntityType="Self.SubscriptionPossibleDate" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_GroupManager_Manager" Association="Self.FK_GroupManager_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="GroupManager" EntitySet="GroupManager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Meeting_GroupManager" Association="Self.FK_Meeting_GroupManager">
+      <End Role="GroupManager" EntitySet="GroupManager" />
+      <End Role="Meeting" EntitySet="Meeting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MeetingMember_Meeting" Association="Self.FK_MeetingMember_Meeting">
+      <End Role="Meeting" EntitySet="Meeting" />
+      <End Role="MeetingMember" EntitySet="MeetingMember" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MeetingMember_Member" Association="Self.FK_MeetingMember_Member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="MeetingMember" EntitySet="MeetingMember" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_GroupManager" Association="Self.FK_Member_GroupManager">
+      <End Role="GroupManager" EntitySet="GroupManager" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PossibleMeetingDate_Meeting" Association="Self.FK_PossibleMeetingDate_Meeting">
+      <End Role="Meeting" EntitySet="Meeting" />
+      <End Role="PossibleMeetingDate" EntitySet="PossibleMeetingDate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionPossibleDate_Member" Association="Self.FK_SubscriptionPossibleDate_Member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="SubscriptionPossibleDate" EntitySet="SubscriptionPossibleDate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionPossibleDate_PossibleMeetingDate" Association="Self.FK_SubscriptionPossibleDate_PossibleMeetingDate">
+      <End Role="PossibleMeetingDate" EntitySet="PossibleMeetingDate" />
+      <End Role="SubscriptionPossibleDate" EntitySet="SubscriptionPossibleDate" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

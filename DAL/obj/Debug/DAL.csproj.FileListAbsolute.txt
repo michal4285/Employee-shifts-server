@@ -1,0 +1,95 @@
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+Y:\תשפא\2\פרובר מיכל\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+C:\finalProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll.config
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\DAL.pdb
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.xml
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.dll
+C:\finalProjectRivki\FinalProject\RivkiHoolMichalProber\DAL\obj\Debug\DAL.pdb
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Net.Http.Formatting.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Web.Cors.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Web.Http.Cors.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Web.Http.dll
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Net.Http.Formatting.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Web.Http.xml
+C:\finelProject\FinalProject\RivkiHoolMichalProber\DAL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\DAL.dll.config
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\DAL.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\DAL.pdb
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\EntityFramework.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Web.Cors.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Web.Http.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\EntityFramework.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Web.Http.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\obj\Debug\DAL.dll
+C:\Users\E7450\Desktop\תכנות\FINAL_PROJECT\DAL\obj\Debug\DAL.pdb
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\DAL.dll.config
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\DAL.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\DAL.pdb
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\EntityFramework.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Web.Cors.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.dll
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\EntityFramework.xml
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.xml
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.xml
+C:\schdule\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.xml
+C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.dll
+C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.pdb
