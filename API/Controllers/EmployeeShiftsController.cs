@@ -52,7 +52,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public Response GetShift()
+        public Response GetShifts()
         {
             Response res = new Response();
 

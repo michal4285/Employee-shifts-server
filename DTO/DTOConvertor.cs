@@ -22,7 +22,7 @@ namespace DTO
                 employeeLastName = employeeDetails.employeeLastName
             };
         }
-        
+
 
         public static DAL.EmployeeDetails ConvertToDTO(DTO.EmployeeDetail employeeDetails)
         {
@@ -85,6 +85,32 @@ namespace DTO
                 ShiftId = employeeShifts.ShiftId
             };
 
+        }
+        #endregion
+        #region ShiftInstitution
+        public static DTO.ShiftInstitutionDTO ConvertToDTO(DAL.ShiftInstitution ShiftInstitution)
+        {
+            return new ShiftInstitutionDTO()
+            {
+                shiftInstitutionId = ShiftInstitution.shiftInstitutionId,
+                institutionId = ShiftInstitution.institutionId,
+                shiftNum = ShiftInstitution.shiftNum,
+                shiftDescription = ShiftInstitution.shiftDescription,
+                startTime = ShiftInstitution.startTime,
+                EndTime = ShiftInstitution.EndTime
+            };
+        }
+        public static DAL.ShiftInstitution ConvertToDTO(ShiftInstitutionDTO ShiftInstitution)
+        {
+            return new DAL.ShiftInstitution()
+            {
+                shiftInstitutionId = ShiftInstitution.shiftInstitutionId,
+                institutionId = ShiftInstitution.institutionId,
+                shiftNum = ShiftInstitution.shiftNum,
+                shiftDescription = ShiftInstitution.shiftDescription,
+                startTime = ShiftInstitution.startTime,
+                EndTime = ShiftInstitution.EndTime
+            };
         }
         #endregion
     }
