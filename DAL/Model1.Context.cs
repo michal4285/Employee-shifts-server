@@ -20,6 +20,7 @@ namespace DAL
         public Entities1()
             : base("name=Entitieshome")
         {
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

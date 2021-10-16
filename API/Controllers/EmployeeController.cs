@@ -53,11 +53,12 @@ namespace API.Controllers
 
             try
             {
-                List<DTO.EmployeeDetail> employee = employeeDetailBL.GetAllEmloyees();
+
+                List<DTO.EmployeeDetail> employees = employeeDetailBL.GetAllEmloyees();
 
                 res.StatusCode = HttpStatusCode.OK;
-                res.Data = employee;
-                res.IsError = employee == null;
+                res.Data = employees;
+                res.IsError = employees == null;
             }
 
             catch (Exception ex)
@@ -106,11 +107,34 @@ namespace API.Controllers
 
             return res;
         }
-
+        [HttpPost]
         // PUT: api/Employee/5
-        public void Put(int id, [FromBody]string value)
+        public Response Update(EmployeeDetail employeeDetail)
         {
+            Response res = new Response();
 
+            try
+            {
+                DTO.EmployeeDetail employee = employeeDetailBL.update(employeeDetail);
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = employee;
+                res.IsError = false;
+
+                if (employee == null)
+                {
+                    res.Message = $"employee's email: {employeeDetail.employeeEmail} is already exist";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+
+            return res;
         }
 
         // DELETE: api/Employee/5
