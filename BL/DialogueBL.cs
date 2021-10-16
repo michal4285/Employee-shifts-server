@@ -1,54 +1,33 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BL.Converters;
 namespace BL
 {
-    public static class DialogueBL
+   public class DialogueBL
     {
-        //public static IEnumerable<DTO.Dialogue> GetDialogue()
-        //{
-        //    var list = DAL.DialogueDal.GetDialogues();
-        //    foreach (var Dialogue in list)
-        //    {
-        //        yield return Converters.Converter.ConvertToDTO<DAL.Dialogue, DTO.Dialogue>(Dialogue);
-        //    }
-        //}
-        //public static bool ReturnDialogue(int id)
-        //{
-        //    var currentDialogue = DAL.DialogueDal.GetDialogue(id);
-        //    return currentDialogue != null;
-        //}
-        //public static bool AddDialogue(DTO.Dialogue dialogue)
-        //{
-        //    try
-        //    {
-        //        DAL.DialogueDal.createDialogue(Converters.Converter.ConvertToEntity<DTO.Dialogue, DAL.Dialogue>(dialogue));
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
+        Entities1 NTT = new Entities1();
+       public DTO.Dialogue getDialogue(int id)
+        {
+            var res = NTT.Dialogue.FirstOrDefault(x => x.dialogueId == id);
+            return res != null ? DTO.DTOConvertor.ConvertToDTO(res) : null;
 
-        //        return false;
-        //    }
-        //}
-        //public static bool delete(int id)
-        //{
-        //    try
-        //    {
+        }
+        public List<DTO.Dialogue> GetAllDialogues()
+        {
+            var res = NTT.Dialogue.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            return res != null ? res : null;
+        }
+        public DTO.Dialogue CreateDialogue(DTO.Dialogue d)
+        {
+            var dialogue = NTT.Dialogue.FirstOrDefault(e => e.dialogueId==d.dialogueId);
 
-        //        DAL.DialogueDal.delete(id);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
-
-
+            Dialogue res = dialogue == null ? NTT.Dialogue.Add(DTO.DTOConvertor.ConvertToDTO(d)) : null;
+            NTT.SaveChanges();
+            return res != null ? DTO.DTOConvertor.ConvertToDTO(res) : null;
+        }
     }
 }
-///

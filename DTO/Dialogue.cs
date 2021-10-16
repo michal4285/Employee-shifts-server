@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-   public class Dialogue: IConvertable
+   public class Dialogue
     {
         public int dialogueId { get; set; }
         public int? employeeInInstitutionId { get; set; }

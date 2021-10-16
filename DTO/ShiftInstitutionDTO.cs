@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-   public class ShiftInstitutionDTO
+   public class ShiftInstitutionDTO:IConvertable
     {
         public int shiftInstitutionId { get; set; }
         public int? institutionId { get; set; }
