@@ -91,3 +91,20 @@ C:\schdule\Employee-shifts-server\BL\obj\Debug\BL.csprojAssemblyReference.cache
 C:\schdule\Employee-shifts-server\BL\obj\Debug\BL.csproj.CopyComplete
 C:\schdule\Employee-shifts-server\BL\obj\Debug\BL.dll
 C:\schdule\Employee-shifts-server\BL\obj\Debug\BL.pdb
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\BL.dll.config
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\BL.dll
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\BL.pdb
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\DAL.dll
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\DTO.dll
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\EntityFramework.dll
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\DAL.pdb
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\DAL.dll.config
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\DTO.pdb
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\EntityFramework.xml
+C:\final project rivki\Employee-shifts-server\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.csproj.CopyComplete
+C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.dll
+C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.pdb

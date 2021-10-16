@@ -168,9 +168,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ConstraintController.cs" />
+    <Compile Include="Controllers\DialogueController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeInInstitutionController.cs" />
+    <Compile Include="Controllers\EmployeeLimitController.cs" />
     <Compile Include="Controllers\EmployeeShiftsController.cs" />
+    <Compile Include="Controllers\FieldOfWorkInInstitutionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstitutionDetailsController.cs" />
     <Compile Include="Controllers\ShiftInstitutionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,6 +271,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{07dc0dc5-612f-4c98-ab23-39935c8e4891}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{55EB375D-C270-453F-B5A1-A64265414790}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{e322dd95-8dff-4c18-9d86-2c4147e847fb}</Project>

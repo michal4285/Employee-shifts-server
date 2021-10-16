@@ -93,3 +93,24 @@ C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.csprojAssemblyReference.cach
 C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.dll
 C:\schdule\Employee-shifts-server\DAL\obj\Debug\DAL.pdb
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\DAL.dll.config
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\DAL.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\DAL.pdb
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\EntityFramework.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Web.Cors.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.dll
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\EntityFramework.xml
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.xml
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.xml
+C:\final project rivki\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.xml
+C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.dll
+C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.pdb

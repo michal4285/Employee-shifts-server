@@ -18,7 +18,7 @@ namespace DAL
     public partial class Entities1 : DbContext
     {
         public Entities1()
-            : base("name=Entities1")
+            : base("name=Entitieshome")
         {
         }
     

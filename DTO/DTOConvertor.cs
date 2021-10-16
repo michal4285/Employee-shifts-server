@@ -113,5 +113,134 @@ namespace DTO
             };
         }
         #endregion
+        #region Constraints
+        public static DTO.Constraints ConvertToDTO(DAL.Constraints constraint)
+        {
+            return new DTO.Constraints()
+            {
+                constraintId = constraint.constraintId,
+                employeeInInstitutionId = constraint.employeeInInstitutionId,
+                Date = constraint.Date,
+                shiftNum = constraint.shiftNum,
+            };
+        }
+        public static DAL.Constraints ConvertToDTO(DTO.Constraints constraint)
+        {
+            return new DAL.Constraints()
+            {
+                constraintId = constraint.constraintId,
+                employeeInInstitutionId = constraint.employeeInInstitutionId,
+                Date = constraint.Date,
+                shiftNum = constraint.shiftNum,
+            };
+        }
+        #endregion
+        #region EmployeeInInstitution
+        public static DTO.EmployeeInInstitution ConvertToDTO(DAL.EmployeeInInstitution employeeInInstitution)
+        {
+            return new DTO.EmployeeInInstitution()
+            {
+                employeeInInstitutionId = employeeInInstitution.employeeInInstitutionId,
+                employeerId = employeeInInstitution.employeerId,
+                institutionId = employeeInInstitution.institutionId,
+                fieldOfWorkId = employeeInInstitution.fieldOfWorkId,
+                status = employeeInInstitution.status,
+                shiftType = employeeInInstitution.shiftType,
+            };
+        }
+        public static DAL.EmployeeInInstitution ConvertToDTO(DTO.EmployeeInInstitution employeeInInstitution)
+        {
+            return new DAL.EmployeeInInstitution()
+            {
+                employeeInInstitutionId = employeeInInstitution.employeeInInstitutionId,
+                employeerId = employeeInInstitution.employeerId,
+                institutionId = employeeInInstitution.institutionId,
+                fieldOfWorkId = employeeInInstitution.fieldOfWorkId,
+                status = employeeInInstitution.status,
+                shiftType = employeeInInstitution.shiftType,
+            };
+        }
+        #endregion
+        #region EmployeeLimit
+        public static DTO.EmployeeLimit ConvertToDTO(DAL.EmployeeLimit employeeLimit)
+        {
+            return new DTO.EmployeeLimit()
+            {
+                employeeShiftId = employeeLimit.employeeShiftId,
+                restrictionId = employeeLimit.restrictionId,
+                employeeInInstitutionId = employeeLimit.employeeInInstitutionId,
+                date = employeeLimit.date,
+                shiftInInstitutionId = employeeLimit.shiftInInstitutionId,
+                substituteEmployeeId = employeeLimit.substituteEmployeeId,
+            };
+        }
+        public static DAL.EmployeeLimit ConvertToDTO(DTO.EmployeeLimit employeeLimit)
+        {
+            return new DAL.EmployeeLimit()
+            {
+                employeeShiftId = employeeLimit.employeeShiftId,
+                restrictionId = employeeLimit.restrictionId,
+                employeeInInstitutionId = employeeLimit.employeeInInstitutionId,
+                date = employeeLimit.date,
+                shiftInInstitutionId = employeeLimit.shiftInInstitutionId,
+                substituteEmployeeId = employeeLimit.substituteEmployeeId,
+            };
+        }
+        #endregion
+        #region FieldOfWorkInInstitution
+        public static DTO.FieldOfWorkInInstitution ConvertToDTO(DAL.FieldOfWorkInInstitution fieldOfWorkInInstitution)
+        {
+            return new DTO.FieldOfWorkInInstitution()
+            {
+                fieldOfWorkId=fieldOfWorkInInstitution.fieldOfWorkId,
+                institutionId=fieldOfWorkInInstitution.institutionId,
+                fieldOfWorkName=fieldOfWorkInInstitution.fieldOfWorkName,
+                numOfFullTimeShift=fieldOfWorkInInstitution.numOfFullTimeShift,
+                numOfPartTimeShift=fieldOfWorkInInstitution.numOfPartTimeShift,
+                numOfEmployeesInWeeklyShift=fieldOfWorkInInstitution.numOfEmployeesInWeeklyShift,
+            };
+        }
+        public static DAL.FieldOfWorkInInstitution ConvertToDTO(DTO.FieldOfWorkInInstitution fieldOfWorkInInstitution)
+        {
+            return new DAL.FieldOfWorkInInstitution()
+            {
+                fieldOfWorkId = fieldOfWorkInInstitution.fieldOfWorkId,
+                institutionId = fieldOfWorkInInstitution.institutionId,
+                fieldOfWorkName = fieldOfWorkInInstitution.fieldOfWorkName,
+                numOfFullTimeShift = fieldOfWorkInInstitution.numOfFullTimeShift,
+                numOfPartTimeShift = fieldOfWorkInInstitution.numOfPartTimeShift,
+                numOfEmployeesInWeeklyShift = fieldOfWorkInInstitution.numOfEmployeesInWeeklyShift,
+            };
+        }
+        #endregion
+        #region InstitutionDetails
+        public static DTO.InstitutionDetails ConvertToDTO(DAL.InstitutionDtails institutionDtails)
+        {
+            return new DTO.InstitutionDetails()
+            {
+                institutionId=institutionDtails.institutionId,
+                institutionName=institutionDtails.institutionName,
+                institutionAddress=institutionDtails.institutionAddress,
+                institutionEmail=institutionDtails.institutionEmail,
+                institutionPhone=institutionDtails.institutionPhone,
+                institutionManagerId=institutionDtails.institutionManagerId,
+                numOfShift = institutionDtails.numOfShift,
+
+            };
+        }
+        public static DAL.InstitutionDtails ConvertToDTO(DTO.InstitutionDetails institutionDtails)
+        {
+            return new DAL.InstitutionDtails()
+            {
+                institutionId = institutionDtails.institutionId,
+                institutionName = institutionDtails.institutionName,
+                institutionAddress = institutionDtails.institutionAddress,
+                institutionEmail = institutionDtails.institutionEmail,
+                institutionPhone = institutionDtails.institutionPhone,
+                institutionManagerId = institutionDtails.institutionManagerId,
+                numOfShift = institutionDtails.numOfShift,
+            };
+        }
+        #endregion
     }
 }

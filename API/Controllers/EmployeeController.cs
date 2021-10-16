@@ -23,6 +23,8 @@ namespace API.Controllers
             try
             {
                 DTO.EmployeeDetail employee = employeeDetailBL.CheckLogin(email, password);
+
+
                 
                 res.StatusCode = HttpStatusCode.OK;
                 res.Data = employee;
@@ -30,7 +32,7 @@ namespace API.Controllers
 
                 if (employee == null)
                 {
-                    res.Message = $"Employee is not exist, email: {email}, password: {password} ";
+                    res.Message = "Employee is not exist, email: {email}, password: {password} ";
                 }
             }
 

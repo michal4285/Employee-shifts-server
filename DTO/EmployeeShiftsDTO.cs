@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class EmployeeShiftsDTO
+    public class EmployeeShiftsDTO:IConvertable
     {
 
         public int employeeShiftId { get; set; }

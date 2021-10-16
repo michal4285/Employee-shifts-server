@@ -14,6 +14,8 @@ namespace DAL
     
     public partial class EmployeeLimit
     {
+        public int employeeShiftId;
+
         public int restrictionId { get; set; }
         public Nullable<int> employeeInInstitutionId { get; set; }
         public Nullable<System.DateTime> date { get; set; }
