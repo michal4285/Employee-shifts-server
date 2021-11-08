@@ -12,7 +12,7 @@ namespace BL
         Entities1 NTT = new Entities1();
         public DTO.EmployeeLimit getEmployeeLimit(int id)
         {
-            var res = NTT.EmployeeLimit.FirstOrDefault(x => x.employeeShiftId == id);
+            var res = NTT.EmployeeLimit.FirstOrDefault(x => x.restrictionId == id);
             return res != null ? DTO.DTOConvertor.ConvertToDTO(res) : null;
 
         }
@@ -23,7 +23,7 @@ namespace BL
         }
         public DTO.EmployeeLimit CreateEmployeeLimit(DTO.EmployeeLimit e)
         {
-            var employeeLimit = NTT.EmployeeLimit.FirstOrDefault(x => x.employeeShiftId == e.employeeShiftId);
+            var employeeLimit = NTT.EmployeeLimit.FirstOrDefault(x => x.restrictionId == e.employeeShiftId);
 
             EmployeeLimit res = employeeLimit == null ? NTT.EmployeeLimit.Add(DTO.DTOConvertor.ConvertToDTO(e)) : null;
             NTT.SaveChanges();

@@ -10,13 +10,15 @@
 namespace DAL
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class Settings
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public int settingId { get; set; }
+        public Nullable<int> institutionId { get; set; }
+        public Nullable<int> freeDaysNum { get; set; }
+        public Nullable<int> freeShiftsNum { get; set; }
+    
+        public virtual InstitutionDtails InstitutionDtails { get; set; }
     }
 }

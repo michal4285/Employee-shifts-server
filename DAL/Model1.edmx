@@ -4,15 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RivkiHoolMichalProberModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="RivkiHoolMichalProberModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Constraints">
           <Key>
             <PropertyRef Name="constraintId" />
           </Key>
           <Property Name="constraintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employeeInInstitutionId" Type="int" />
-          <Property Name="Date" Type="datetime2" Precision="7" />
-          <Property Name="shiftNum" Type="int" />
+          <Property Name="dayInWeek" Type="int" />
+          <Property Name="shiftId" Type="int" />
+          <Property Name="dateOfCreate" Type="datetime2" Precision="7" />
         </EntityType>
         <EntityType Name="Dialogue">
           <Key>
@@ -89,6 +90,15 @@
           <Property Name="institutionManagerId" Type="int" />
           <Property Name="numOfShift" Type="int" />
         </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="settingId" />
+          </Key>
+          <Property Name="settingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="institutionId" Type="int" />
+          <Property Name="freeDaysNum" Type="int" />
+          <Property Name="feeShiftsNum" Type="int" />
+        </EntityType>
         <EntityType Name="ShiftInstitution">
           <Key>
             <PropertyRef Name="shiftInstitutionId" />
@@ -119,6 +129,18 @@
             </Principal>
             <Dependent Role="Constraints">
               <PropertyRef Name="employeeInInstitutionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Constraints_ShiftInstitution">
+          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
+          <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShiftInstitution">
+              <PropertyRef Name="shiftInstitutionId" />
+            </Principal>
+            <Dependent Role="Constraints">
+              <PropertyRef Name="shiftId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -254,6 +276,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Settings_InstitutionDtails">
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+          <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstitutionDtails">
+              <PropertyRef Name="institutionId" />
+            </Principal>
+            <Dependent Role="Settings">
+              <PropertyRef Name="institutionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ShiftInstitution_InstitutionDtails">
           <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
           <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="*" />
@@ -266,37 +300,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="RivkiHoolMichalProberModelStoreContainer">
           <EntitySet Name="Constraints" EntityType="Self.Constraints" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dialogue" EntityType="Self.Dialogue" Schema="dbo" store:Type="Tables" />
@@ -306,10 +309,15 @@
           <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FieldOfWorkInInstitution" EntityType="Self.FieldOfWorkInInstitution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InstitutionDtails" EntityType="Self.InstitutionDtails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShiftInstitution" EntityType="Self.ShiftInstitution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="Self.FK_Constraints_EmployeeInInstitution">
             <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="Constraints" EntitySet="Constraints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Constraints_ShiftInstitution" Association="Self.FK_Constraints_ShiftInstitution">
+            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
             <End Role="Constraints" EntitySet="Constraints" />
           </AssociationSet>
           <AssociationSet Name="FK_Dialogue_EmployeeInInstitution" Association="Self.FK_Dialogue_EmployeeInInstitution">
@@ -356,118 +364,31 @@
             <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
           </AssociationSet>
+          <AssociationSet Name="FK_Settings_InstitutionDtails" Association="Self.FK_Settings_InstitutionDtails">
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+            <End Role="Settings" EntitySet="Settings" />
+          </AssociationSet>
           <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="Self.FK_ShiftInstitution_InstitutionDtails">
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RivkiHoolMichalProberModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Constraints" EntityType="RivkiHoolMichalProberModel.Constraints" />
-          <EntitySet Name="Dialogue" EntityType="RivkiHoolMichalProberModel.Dialogue" />
-          <EntitySet Name="EmployeeDetails" EntityType="RivkiHoolMichalProberModel.EmployeeDetails" />
-          <EntitySet Name="EmployeeInInstitution" EntityType="RivkiHoolMichalProberModel.EmployeeInInstitution" />
-          <EntitySet Name="EmployeeLimit" EntityType="RivkiHoolMichalProberModel.EmployeeLimit" />
-          <EntitySet Name="EmployeeShifts" EntityType="RivkiHoolMichalProberModel.EmployeeShifts" />
-          <EntitySet Name="FieldOfWorkInInstitution" EntityType="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" />
-          <EntitySet Name="InstitutionDtails" EntityType="RivkiHoolMichalProberModel.InstitutionDtails" />
-          <EntitySet Name="ShiftInstitution" EntityType="RivkiHoolMichalProberModel.ShiftInstitution" />
-          <EntitySet Name="sysdiagrams" EntityType="RivkiHoolMichalProberModel.sysdiagrams" />
-          <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="RivkiHoolMichalProberModel.FK_Constraints_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="Constraints" EntitySet="Constraints" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Dialogue_EmployeeInInstitution" Association="RivkiHoolMichalProberModel.FK_Dialogue_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="Dialogue" EntitySet="Dialogue" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeInInstitution_EmployeeDetails" Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_EmployeeDetails">
-            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InstitutionDtails_EmployeeDetails" Association="RivkiHoolMichalProberModel.FK_InstitutionDtails_EmployeeDetails">
-            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeInInstitution_FieldOfWorkInInstitution" Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_FieldOfWorkInInstitution">
-            <End Role="FieldOfWorkInInstitution" EntitySet="FieldOfWorkInInstitution" />
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeInInstitution_InstitutionDtails" Association="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_InstitutionDtails">
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution" Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution1" Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution1">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeSchedule_EmployeeInInstitution" Association="RivkiHoolMichalProberModel.FK_EmployeeSchedule_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_ShiftInstitution" Association="RivkiHoolMichalProberModel.FK_EmployeeLimit_ShiftInstitution">
-            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeSchedule_ShiftInstitution" Association="RivkiHoolMichalProberModel.FK_EmployeeSchedule_ShiftInstitution">
-            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
-            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FieldOfWorkInInstitution_InstitutionDtails" Association="RivkiHoolMichalProberModel.FK_FieldOfWorkInInstitution_InstitutionDtails">
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-            <End Role="FieldOfWorkInInstitution" EntitySet="FieldOfWorkInInstitution" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="RivkiHoolMichalProberModel.FK_ShiftInstitution_InstitutionDtails">
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
-          </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(RivkiHoolMichalProberModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(RivkiHoolMichalProberModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-        </EntityContainer>
         <EntityType Name="Constraints">
           <Key>
             <PropertyRef Name="constraintId" />
           </Key>
           <Property Name="constraintId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employeeInInstitutionId" Type="Int32" />
-          <Property Name="Date" Type="DateTime" Precision="7" />
-          <Property Name="shiftNum" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_Constraints_EmployeeInInstitution" FromRole="Constraints" ToRole="EmployeeInInstitution" />
+          <Property Name="dayInWeek" Type="Int32" />
+          <Property Name="shiftId" Type="Int32" />
+          <Property Name="dateOfCreate" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_Constraints_EmployeeInInstitution" FromRole="Constraints" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_Constraints_ShiftInstitution" FromRole="Constraints" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="Dialogue">
           <Key>
@@ -478,7 +399,7 @@
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_Dialogue_EmployeeInInstitution" FromRole="Dialogue" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_Dialogue_EmployeeInInstitution" FromRole="Dialogue" ToRole="EmployeeInInstitution" />
         </EntityType>
         <EntityType Name="EmployeeDetails">
           <Key>
@@ -491,8 +412,8 @@
           <Property Name="employeePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="employeeEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="employeePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeDetails" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="InstitutionDtails" Relationship="RivkiHoolMichalProberModel.FK_InstitutionDtails_EmployeeDetails" FromRole="EmployeeDetails" ToRole="InstitutionDtails" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeDetails" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_InstitutionDtails_EmployeeDetails" FromRole="EmployeeDetails" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="EmployeeInInstitution">
           <Key>
@@ -504,14 +425,14 @@
           <Property Name="fieldOfWorkId" Type="Int32" />
           <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="shiftType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Constraints" Relationship="RivkiHoolMichalProberModel.FK_Constraints_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Constraints" />
-          <NavigationProperty Name="Dialogue" Relationship="RivkiHoolMichalProberModel.FK_Dialogue_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Dialogue" />
-          <NavigationProperty Name="EmployeeDetails" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeInInstitution" ToRole="EmployeeDetails" />
-          <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_FieldOfWorkInInstitution" FromRole="EmployeeInInstitution" ToRole="FieldOfWorkInInstitution" />
-          <NavigationProperty Name="InstitutionDtails" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_InstitutionDtails" FromRole="EmployeeInInstitution" ToRole="InstitutionDtails" />
-          <NavigationProperty Name="EmployeeLimit" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
-          <NavigationProperty Name="EmployeeLimit1" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
-          <NavigationProperty Name="EmployeeShifts" Relationship="RivkiHoolMichalProberModel.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeShifts" />
+          <NavigationProperty Name="Constraints" Relationship="Self.FK_Constraints_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Constraints" />
+          <NavigationProperty Name="Dialogue" Relationship="Self.FK_Dialogue_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Dialogue" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeInInstitution" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="Self.FK_EmployeeInInstitution_FieldOfWorkInInstitution" FromRole="EmployeeInInstitution" ToRole="FieldOfWorkInInstitution" />
+          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_EmployeeInInstitution_InstitutionDtails" FromRole="EmployeeInInstitution" ToRole="InstitutionDtails" />
+          <NavigationProperty Name="EmployeeLimit" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
+          <NavigationProperty Name="EmployeeLimit1" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
+          <NavigationProperty Name="EmployeeShifts" Relationship="Self.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeShifts" />
         </EntityType>
         <EntityType Name="EmployeeLimit">
           <Key>
@@ -522,9 +443,9 @@
           <Property Name="date" Type="DateTime" Precision="3" />
           <Property Name="shiftInInstitutionId" Type="Int32" />
           <Property Name="substituteEmployeeId" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="EmployeeInInstitution1" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="ShiftInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_ShiftInstitution" FromRole="EmployeeLimit" ToRole="ShiftInstitution" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="EmployeeInInstitution1" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_EmployeeLimit_ShiftInstitution" FromRole="EmployeeLimit" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="EmployeeShifts">
           <Key>
@@ -534,8 +455,8 @@
           <Property Name="employeeInInstitutionId" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="7" />
           <Property Name="ShiftId" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeShifts" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="ShiftInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeSchedule_ShiftInstitution" FromRole="EmployeeShifts" ToRole="ShiftInstitution" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeShifts" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_EmployeeSchedule_ShiftInstitution" FromRole="EmployeeShifts" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="FieldOfWorkInInstitution">
           <Key>
@@ -547,8 +468,8 @@
           <Property Name="numOfFullTimeShift" Type="Int32" />
           <Property Name="numOfPartTimeShift" Type="Int32" />
           <Property Name="numOfEmployeesInWeeklyShift" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_FieldOfWorkInInstitution" FromRole="FieldOfWorkInInstitution" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="InstitutionDtails" Relationship="RivkiHoolMichalProberModel.FK_FieldOfWorkInInstitution_InstitutionDtails" FromRole="FieldOfWorkInInstitution" ToRole="InstitutionDtails" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeInInstitution_FieldOfWorkInInstitution" FromRole="FieldOfWorkInInstitution" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_FieldOfWorkInInstitution_InstitutionDtails" FromRole="FieldOfWorkInInstitution" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="InstitutionDtails">
           <Key>
@@ -561,10 +482,21 @@
           <Property Name="institutionPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="institutionManagerId" Type="Int32" />
           <Property Name="numOfShift" Type="Int32" />
-          <NavigationProperty Name="EmployeeDetails" Relationship="RivkiHoolMichalProberModel.FK_InstitutionDtails_EmployeeDetails" FromRole="InstitutionDtails" ToRole="EmployeeDetails" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="RivkiHoolMichalProberModel.FK_EmployeeInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="RivkiHoolMichalProberModel.FK_FieldOfWorkInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="FieldOfWorkInInstitution" />
-          <NavigationProperty Name="ShiftInstitution" Relationship="RivkiHoolMichalProberModel.FK_ShiftInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="ShiftInstitution" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_InstitutionDtails_EmployeeDetails" FromRole="InstitutionDtails" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="Self.FK_FieldOfWorkInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="FieldOfWorkInInstitution" />
+          <NavigationProperty Name="Settings" Relationship="Self.FK_Settings_InstitutionDtails" FromRole="InstitutionDtails" ToRole="Settings" />
+          <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_ShiftInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="ShiftInstitution" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="settingId" />
+          </Key>
+          <Property Name="settingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="institutionId" Type="Int32" />
+          <Property Name="freeDaysNum" Type="Int32" />
+          <Property Name="feeShiftsNum" Type="Int32" />
+          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_Settings_InstitutionDtails" FromRole="Settings" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="ShiftInstitution">
           <Key>
@@ -576,23 +508,24 @@
           <Property Name="shiftDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="startTime" Type="Time" Precision="7" />
           <Property Name="EndTime" Type="Time" Precision="7" />
-          <NavigationProperty Name="EmployeeLimit" Relationship="RivkiHoolMichalProberModel.FK_EmployeeLimit_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeLimit" />
-          <NavigationProperty Name="EmployeeShifts" Relationship="RivkiHoolMichalProberModel.FK_EmployeeSchedule_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeShifts" />
-          <NavigationProperty Name="InstitutionDtails" Relationship="RivkiHoolMichalProberModel.FK_ShiftInstitution_InstitutionDtails" FromRole="ShiftInstitution" ToRole="InstitutionDtails" />
+          <NavigationProperty Name="Constraints" Relationship="Self.FK_Constraints_ShiftInstitution" FromRole="ShiftInstitution" ToRole="Constraints" />
+          <NavigationProperty Name="EmployeeLimit" Relationship="Self.FK_EmployeeLimit_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeLimit" />
+          <NavigationProperty Name="EmployeeShifts" Relationship="Self.FK_EmployeeSchedule_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeShifts" />
+          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_ShiftInstitution_InstitutionDtails" FromRole="ShiftInstitution" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Constraints_EmployeeInInstitution">
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.Constraints" Role="Constraints" Multiplicity="*" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
+          <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeInInstitution">
               <PropertyRef Name="employeeInInstitutionId" />
@@ -602,9 +535,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Constraints_ShiftInstitution">
+          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
+          <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShiftInstitution">
+              <PropertyRef Name="shiftInstitutionId" />
+            </Principal>
+            <Dependent Role="Constraints">
+              <PropertyRef Name="shiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Dialogue_EmployeeInInstitution">
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.Dialogue" Role="Dialogue" Multiplicity="*" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
+          <End Role="Dialogue" Type="Self.Dialogue" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeInInstitution">
               <PropertyRef Name="employeeInInstitutionId" />
@@ -615,8 +560,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeInInstitution_EmployeeDetails">
-          <End Type="RivkiHoolMichalProberModel.EmployeeDetails" Role="EmployeeDetails" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="*" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeDetails">
               <PropertyRef Name="employeeId" />
@@ -627,8 +572,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InstitutionDtails_EmployeeDetails">
-          <End Type="RivkiHoolMichalProberModel.EmployeeDetails" Role="EmployeeDetails" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.InstitutionDtails" Role="InstitutionDtails" Multiplicity="*" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeDetails">
               <PropertyRef Name="employeeId" />
@@ -639,8 +584,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeInInstitution_FieldOfWorkInInstitution">
-          <End Type="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" Role="FieldOfWorkInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="*" />
+          <End Role="FieldOfWorkInInstitution" Type="Self.FieldOfWorkInInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FieldOfWorkInInstitution">
               <PropertyRef Name="fieldOfWorkId" />
@@ -651,8 +596,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeInInstitution_InstitutionDtails">
-          <End Type="RivkiHoolMichalProberModel.InstitutionDtails" Role="InstitutionDtails" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="*" />
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InstitutionDtails">
               <PropertyRef Name="institutionId" />
@@ -663,8 +608,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeLimit_EmployeeInInstitution">
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeLimit" Role="EmployeeLimit" Multiplicity="*" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeInInstitution">
               <PropertyRef Name="employeeInInstitutionId" />
@@ -675,8 +620,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeLimit_EmployeeInInstitution1">
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeLimit" Role="EmployeeLimit" Multiplicity="*" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeInInstitution">
               <PropertyRef Name="employeeInInstitutionId" />
@@ -687,8 +632,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeSchedule_EmployeeInInstitution">
-          <End Type="RivkiHoolMichalProberModel.EmployeeInInstitution" Role="EmployeeInInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeShifts" Role="EmployeeShifts" Multiplicity="*" />
+          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeShifts" Type="Self.EmployeeShifts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeeInInstitution">
               <PropertyRef Name="employeeInInstitutionId" />
@@ -699,8 +644,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeLimit_ShiftInstitution">
-          <End Type="RivkiHoolMichalProberModel.ShiftInstitution" Role="ShiftInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeLimit" Role="EmployeeLimit" Multiplicity="*" />
+          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShiftInstitution">
               <PropertyRef Name="shiftInstitutionId" />
@@ -711,8 +656,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EmployeeSchedule_ShiftInstitution">
-          <End Type="RivkiHoolMichalProberModel.ShiftInstitution" Role="ShiftInstitution" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.EmployeeShifts" Role="EmployeeShifts" Multiplicity="*" />
+          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
+          <End Role="EmployeeShifts" Type="Self.EmployeeShifts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShiftInstitution">
               <PropertyRef Name="shiftInstitutionId" />
@@ -723,8 +668,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FieldOfWorkInInstitution_InstitutionDtails">
-          <End Type="RivkiHoolMichalProberModel.InstitutionDtails" Role="InstitutionDtails" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" Role="FieldOfWorkInInstitution" Multiplicity="*" />
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+          <End Role="FieldOfWorkInInstitution" Type="Self.FieldOfWorkInInstitution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InstitutionDtails">
               <PropertyRef Name="institutionId" />
@@ -734,9 +679,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Settings_InstitutionDtails">
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+          <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InstitutionDtails">
+              <PropertyRef Name="institutionId" />
+            </Principal>
+            <Dependent Role="Settings">
+              <PropertyRef Name="institutionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ShiftInstitution_InstitutionDtails">
-          <End Type="RivkiHoolMichalProberModel.InstitutionDtails" Role="InstitutionDtails" Multiplicity="0..1" />
-          <End Type="RivkiHoolMichalProberModel.ShiftInstitution" Role="ShiftInstitution" Multiplicity="*" />
+          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InstitutionDtails">
               <PropertyRef Name="institutionId" />
@@ -746,17 +703,79 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Constraints" EntityType="Self.Constraints" />
+          <EntitySet Name="Dialogue" EntityType="Self.Dialogue" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" />
+          <EntitySet Name="EmployeeInInstitution" EntityType="Self.EmployeeInInstitution" />
+          <EntitySet Name="EmployeeLimit" EntityType="Self.EmployeeLimit" />
+          <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShifts" />
+          <EntitySet Name="FieldOfWorkInInstitution" EntityType="Self.FieldOfWorkInInstitution" />
+          <EntitySet Name="InstitutionDtails" EntityType="Self.InstitutionDtails" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" />
+          <EntitySet Name="ShiftInstitution" EntityType="Self.ShiftInstitution" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="Self.FK_Constraints_EmployeeInInstitution">
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="Constraints" EntitySet="Constraints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Constraints_ShiftInstitution" Association="Self.FK_Constraints_ShiftInstitution">
+            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
+            <End Role="Constraints" EntitySet="Constraints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dialogue_EmployeeInInstitution" Association="Self.FK_Dialogue_EmployeeInInstitution">
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="Dialogue" EntitySet="Dialogue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInInstitution_EmployeeDetails" Association="Self.FK_EmployeeInInstitution_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstitutionDtails_EmployeeDetails" Association="Self.FK_InstitutionDtails_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInInstitution_FieldOfWorkInInstitution" Association="Self.FK_EmployeeInInstitution_FieldOfWorkInInstitution">
+            <End Role="FieldOfWorkInInstitution" EntitySet="FieldOfWorkInInstitution" />
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInInstitution_InstitutionDtails" Association="Self.FK_EmployeeInInstitution_InstitutionDtails">
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution" Association="Self.FK_EmployeeLimit_EmployeeInInstitution">
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution1" Association="Self.FK_EmployeeLimit_EmployeeInInstitution1">
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeSchedule_EmployeeInInstitution" Association="Self.FK_EmployeeSchedule_EmployeeInInstitution">
+            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeLimit_ShiftInstitution" Association="Self.FK_EmployeeLimit_ShiftInstitution">
+            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
+            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeSchedule_ShiftInstitution" Association="Self.FK_EmployeeSchedule_ShiftInstitution">
+            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
+            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldOfWorkInInstitution_InstitutionDtails" Association="Self.FK_FieldOfWorkInInstitution_InstitutionDtails">
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+            <End Role="FieldOfWorkInInstitution" EntitySet="FieldOfWorkInInstitution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Settings_InstitutionDtails" Association="Self.FK_Settings_InstitutionDtails">
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+            <End Role="Settings" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="Self.FK_ShiftInstitution_InstitutionDtails">
+            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -766,142 +785,129 @@
           <EntitySetMapping Name="Constraints">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.Constraints">
               <MappingFragment StoreEntitySet="Constraints">
-                <ScalarProperty Name="shiftNum" ColumnName="shiftNum" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
                 <ScalarProperty Name="constraintId" ColumnName="constraintId" />
+                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
+                <ScalarProperty Name="dayInWeek" ColumnName="dayInWeek" />
+                <ScalarProperty Name="shiftId" ColumnName="shiftId" />
+                <ScalarProperty Name="dateOfCreate" ColumnName="dateOfCreate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dialogue">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.Dialogue">
               <MappingFragment StoreEntitySet="Dialogue">
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
                 <ScalarProperty Name="dialogueId" ColumnName="dialogueId" />
+                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeDetails">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeDetails">
               <MappingFragment StoreEntitySet="EmployeeDetails">
-                <ScalarProperty Name="employeePassword" ColumnName="employeePassword" />
-                <ScalarProperty Name="employeeEmail" ColumnName="employeeEmail" />
-                <ScalarProperty Name="employeePhone" ColumnName="employeePhone" />
-                <ScalarProperty Name="employeeAddress" ColumnName="employeeAddress" />
-                <ScalarProperty Name="employeeLastName" ColumnName="employeeLastName" />
-                <ScalarProperty Name="employeeFirstName" ColumnName="employeeFirstName" />
                 <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="employeeFirstName" ColumnName="employeeFirstName" />
+                <ScalarProperty Name="employeeLastName" ColumnName="employeeLastName" />
+                <ScalarProperty Name="employeeAddress" ColumnName="employeeAddress" />
+                <ScalarProperty Name="employeePhone" ColumnName="employeePhone" />
+                <ScalarProperty Name="employeeEmail" ColumnName="employeeEmail" />
+                <ScalarProperty Name="employeePassword" ColumnName="employeePassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeInInstitution">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeInInstitution">
               <MappingFragment StoreEntitySet="EmployeeInInstitution">
-                <ScalarProperty Name="shiftType" ColumnName="shiftType" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="fieldOfWorkId" ColumnName="fieldOfWorkId" />
-                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
-                <ScalarProperty Name="employeerId" ColumnName="employeerId" />
                 <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
+                <ScalarProperty Name="employeerId" ColumnName="employeerId" />
+                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
+                <ScalarProperty Name="fieldOfWorkId" ColumnName="fieldOfWorkId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="shiftType" ColumnName="shiftType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeLimit">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeLimit">
               <MappingFragment StoreEntitySet="EmployeeLimit">
-                <ScalarProperty Name="substituteEmployeeId" ColumnName="substituteEmployeeId" />
-                <ScalarProperty Name="shiftInInstitutionId" ColumnName="shiftInInstitutionId" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
                 <ScalarProperty Name="restrictionId" ColumnName="restrictionId" />
+                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="shiftInInstitutionId" ColumnName="shiftInInstitutionId" />
+                <ScalarProperty Name="substituteEmployeeId" ColumnName="substituteEmployeeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeShifts">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeShifts">
               <MappingFragment StoreEntitySet="EmployeeShifts">
-                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
                 <ScalarProperty Name="employeeShiftId" ColumnName="employeeShiftId" />
+                <ScalarProperty Name="employeeInInstitutionId" ColumnName="employeeInInstitutionId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FieldOfWorkInInstitution">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.FieldOfWorkInInstitution">
               <MappingFragment StoreEntitySet="FieldOfWorkInInstitution">
-                <ScalarProperty Name="numOfEmployeesInWeeklyShift" ColumnName="numOfEmployeesInWeeklyShift" />
-                <ScalarProperty Name="numOfPartTimeShift" ColumnName="numOfPartTimeShift" />
-                <ScalarProperty Name="numOfFullTimeShift" ColumnName="numOfFullTimeShift" />
-                <ScalarProperty Name="fieldOfWorkName" ColumnName="fieldOfWorkName" />
-                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
                 <ScalarProperty Name="fieldOfWorkId" ColumnName="fieldOfWorkId" />
+                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
+                <ScalarProperty Name="fieldOfWorkName" ColumnName="fieldOfWorkName" />
+                <ScalarProperty Name="numOfFullTimeShift" ColumnName="numOfFullTimeShift" />
+                <ScalarProperty Name="numOfPartTimeShift" ColumnName="numOfPartTimeShift" />
+                <ScalarProperty Name="numOfEmployeesInWeeklyShift" ColumnName="numOfEmployeesInWeeklyShift" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="InstitutionDtails">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.InstitutionDtails">
               <MappingFragment StoreEntitySet="InstitutionDtails">
-                <ScalarProperty Name="numOfShift" ColumnName="numOfShift" />
-                <ScalarProperty Name="institutionManagerId" ColumnName="institutionManagerId" />
-                <ScalarProperty Name="institutionPhone" ColumnName="institutionPhone" />
-                <ScalarProperty Name="institutionEmail" ColumnName="institutionEmail" />
-                <ScalarProperty Name="institutionAddress" ColumnName="institutionAddress" />
-                <ScalarProperty Name="institutionName" ColumnName="institutionName" />
                 <ScalarProperty Name="institutionId" ColumnName="institutionId" />
+                <ScalarProperty Name="institutionName" ColumnName="institutionName" />
+                <ScalarProperty Name="institutionAddress" ColumnName="institutionAddress" />
+                <ScalarProperty Name="institutionEmail" ColumnName="institutionEmail" />
+                <ScalarProperty Name="institutionPhone" ColumnName="institutionPhone" />
+                <ScalarProperty Name="institutionManagerId" ColumnName="institutionManagerId" />
+                <ScalarProperty Name="numOfShift" ColumnName="numOfShift" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.Settings">
+              <MappingFragment StoreEntitySet="Settings">
+                <ScalarProperty Name="settingId" ColumnName="settingId" />
+                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
+                <ScalarProperty Name="freeDaysNum" ColumnName="freeDaysNum" />
+                <ScalarProperty Name="feeShiftsNum" ColumnName="feeShiftsNum" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ShiftInstitution">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.ShiftInstitution">
               <MappingFragment StoreEntitySet="ShiftInstitution">
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="startTime" ColumnName="startTime" />
-                <ScalarProperty Name="shiftDescription" ColumnName="shiftDescription" />
-                <ScalarProperty Name="shiftNum" ColumnName="shiftNum" />
-                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
                 <ScalarProperty Name="shiftInstitutionId" ColumnName="shiftInstitutionId" />
+                <ScalarProperty Name="institutionId" ColumnName="institutionId" />
+                <ScalarProperty Name="shiftNum" ColumnName="shiftNum" />
+                <ScalarProperty Name="shiftDescription" ColumnName="shiftDescription" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="RivkiHoolMichalProberModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RivkiHoolMichalProberModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RivkiHoolMichalProberModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RivkiHoolMichalProberModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RivkiHoolMichalProberModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="RivkiHoolMichalProberModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RivkiHoolMichalProberModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RivkiHoolMichalProberModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RivkiHoolMichalProberModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -10,7 +10,13 @@ namespace DTO
     {
         public int constraintId { get; set; }
         public int? employeeInInstitutionId { get; set; }
-        public DateTime? Date { get; set; }
-        public int? shiftNum { get; set; }
+        public int? dayInWeek { get; set; }
+        public int? shiftId { get; set; }
+        public DateTime? dateOfCreate { get; set; }
+
+
+       
+  
+        
     }
 }

@@ -17,6 +17,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ShiftInstitution()
         {
+            this.Constraints = new HashSet<Constraints>();
             this.EmployeeLimit = new HashSet<EmployeeLimit>();
             this.EmployeeShifts = new HashSet<EmployeeShifts>();
         }
@@ -28,6 +29,8 @@ namespace DAL
         public Nullable<System.TimeSpan> startTime { get; set; }
         public Nullable<System.TimeSpan> EndTime { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Constraints> Constraints { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmployeeLimit> EmployeeLimit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

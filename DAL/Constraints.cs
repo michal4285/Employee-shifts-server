@@ -16,9 +16,11 @@ namespace DAL
     {
         public int constraintId { get; set; }
         public Nullable<int> employeeInInstitutionId { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> shiftNum { get; set; }
+        public Nullable<int> dayInWeek { get; set; }
+        public Nullable<int> shiftId { get; set; }
+        public Nullable<System.DateTime> dateOfCreate { get; set; }
     
         public virtual EmployeeInInstitution EmployeeInInstitution { get; set; }
+        public virtual ShiftInstitution ShiftInstitution { get; set; }
     }
 }

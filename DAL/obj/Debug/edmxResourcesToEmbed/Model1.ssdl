@@ -6,8 +6,9 @@
     </Key>
     <Property Name="constraintId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="employeeInInstitutionId" Type="int" />
-    <Property Name="Date" Type="datetime2" Precision="7" />
-    <Property Name="shiftNum" Type="int" />
+    <Property Name="dayInWeek" Type="int" />
+    <Property Name="shiftId" Type="int" />
+    <Property Name="dateOfCreate" Type="datetime2" Precision="7" />
   </EntityType>
   <EntityType Name="Dialogue">
     <Key>
@@ -84,6 +85,15 @@
     <Property Name="institutionManagerId" Type="int" />
     <Property Name="numOfShift" Type="int" />
   </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="settingId" />
+    </Key>
+    <Property Name="settingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="institutionId" Type="int" />
+    <Property Name="freeDaysNum" Type="int" />
+    <Property Name="feeShiftsNum" Type="int" />
+  </EntityType>
   <EntityType Name="ShiftInstitution">
     <Key>
       <PropertyRef Name="shiftInstitutionId" />
@@ -114,6 +124,18 @@
       </Principal>
       <Dependent Role="Constraints">
         <PropertyRef Name="employeeInInstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Constraints_ShiftInstitution">
+    <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
+    <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShiftInstitution">
+        <PropertyRef Name="shiftInstitutionId" />
+      </Principal>
+      <Dependent Role="Constraints">
+        <PropertyRef Name="shiftId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -249,6 +271,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Settings_InstitutionDtails">
+    <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
+    <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstitutionDtails">
+        <PropertyRef Name="institutionId" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="institutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ShiftInstitution_InstitutionDtails">
     <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
     <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="*" />
@@ -261,37 +295,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="RivkiHoolMichalProberModelStoreContainer">
     <EntitySet Name="Constraints" EntityType="Self.Constraints" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dialogue" EntityType="Self.Dialogue" Schema="dbo" store:Type="Tables" />
@@ -301,10 +304,15 @@
     <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShifts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FieldOfWorkInInstitution" EntityType="Self.FieldOfWorkInInstitution" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InstitutionDtails" EntityType="Self.InstitutionDtails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ShiftInstitution" EntityType="Self.ShiftInstitution" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="Self.FK_Constraints_EmployeeInInstitution">
       <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
+      <End Role="Constraints" EntitySet="Constraints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Constraints_ShiftInstitution" Association="Self.FK_Constraints_ShiftInstitution">
+      <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
       <End Role="Constraints" EntitySet="Constraints" />
     </AssociationSet>
     <AssociationSet Name="FK_Dialogue_EmployeeInInstitution" Association="Self.FK_Dialogue_EmployeeInInstitution">
@@ -350,6 +358,10 @@
     <AssociationSet Name="FK_InstitutionDtails_EmployeeDetails" Association="Self.FK_InstitutionDtails_EmployeeDetails">
       <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
       <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_InstitutionDtails" Association="Self.FK_Settings_InstitutionDtails">
+      <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
+      <End Role="Settings" EntitySet="Settings" />
     </AssociationSet>
     <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="Self.FK_ShiftInstitution_InstitutionDtails">
       <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />

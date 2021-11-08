@@ -120,8 +120,9 @@ namespace DTO
             {
                 constraintId = constraint.constraintId,
                 employeeInInstitutionId = constraint.employeeInInstitutionId,
-                Date = constraint.Date,
-                shiftNum = constraint.shiftNum,
+                dayInWeek = constraint.dayInWeek,
+                shiftId = constraint.shiftId,
+                dateOfCreate = constraint.dateOfCreate
             };
         }
         public static DAL.Constraints ConvertToDTO(DTO.Constraints constraint)
@@ -130,8 +131,9 @@ namespace DTO
             {
                 constraintId = constraint.constraintId,
                 employeeInInstitutionId = constraint.employeeInInstitutionId,
-                Date = constraint.Date,
-                shiftNum = constraint.shiftNum,
+                dayInWeek = constraint.dayInWeek,
+                shiftId = constraint.shiftId,
+                dateOfCreate = constraint.dateOfCreate
             };
         }
         #endregion
@@ -166,7 +168,7 @@ namespace DTO
         {
             return new DTO.EmployeeLimit()
             {
-                employeeShiftId = employeeLimit.employeeShiftId,
+                
                 restrictionId = employeeLimit.restrictionId,
                 employeeInInstitutionId = employeeLimit.employeeInInstitutionId,
                 date = employeeLimit.date,
@@ -178,7 +180,7 @@ namespace DTO
         {
             return new DAL.EmployeeLimit()
             {
-                employeeShiftId = employeeLimit.employeeShiftId,
+
                 restrictionId = employeeLimit.restrictionId,
                 employeeInInstitutionId = employeeLimit.employeeInInstitutionId,
                 date = employeeLimit.date,
@@ -192,12 +194,12 @@ namespace DTO
         {
             return new DTO.FieldOfWorkInInstitution()
             {
-                fieldOfWorkId=fieldOfWorkInInstitution.fieldOfWorkId,
-                institutionId=fieldOfWorkInInstitution.institutionId,
-                fieldOfWorkName=fieldOfWorkInInstitution.fieldOfWorkName,
-                numOfFullTimeShift=fieldOfWorkInInstitution.numOfFullTimeShift,
-                numOfPartTimeShift=fieldOfWorkInInstitution.numOfPartTimeShift,
-                numOfEmployeesInWeeklyShift=fieldOfWorkInInstitution.numOfEmployeesInWeeklyShift,
+                fieldOfWorkId = fieldOfWorkInInstitution.fieldOfWorkId,
+                institutionId = fieldOfWorkInInstitution.institutionId,
+                fieldOfWorkName = fieldOfWorkInInstitution.fieldOfWorkName,
+                numOfFullTimeShift = fieldOfWorkInInstitution.numOfFullTimeShift,
+                numOfPartTimeShift = fieldOfWorkInInstitution.numOfPartTimeShift,
+                numOfEmployeesInWeeklyShift = fieldOfWorkInInstitution.numOfEmployeesInWeeklyShift,
             };
         }
         public static DAL.FieldOfWorkInInstitution ConvertToDTO(DTO.FieldOfWorkInInstitution fieldOfWorkInInstitution)
@@ -218,12 +220,12 @@ namespace DTO
         {
             return new DTO.InstitutionDetails()
             {
-                institutionId=institutionDtails.institutionId,
-                institutionName=institutionDtails.institutionName,
-                institutionAddress=institutionDtails.institutionAddress,
-                institutionEmail=institutionDtails.institutionEmail,
-                institutionPhone=institutionDtails.institutionPhone,
-                institutionManagerId=institutionDtails.institutionManagerId,
+                institutionId = institutionDtails.institutionId,
+                institutionName = institutionDtails.institutionName,
+                institutionAddress = institutionDtails.institutionAddress,
+                institutionEmail = institutionDtails.institutionEmail,
+                institutionPhone = institutionDtails.institutionPhone,
+                institutionManagerId = institutionDtails.institutionManagerId,
                 numOfShift = institutionDtails.numOfShift,
 
             };
@@ -241,6 +243,29 @@ namespace DTO
                 numOfShift = institutionDtails.numOfShift,
             };
         }
+        #endregion
+        #region settings
+        public static DTO.settings ConvertToDTO(DAL.Settings settings)
+        {
+            return new DTO.settings()
+            {
+                settingId = settings.settingId,
+                institutionId = settings.institutionId,
+                freeDaysNum = settings.freeDaysNum,
+                freeShiftsNum = settings.freeShiftsNum,
+            };
+        }
+        public static DAL.Settings ConvertToDTO(DTO.settings settings)
+        {
+            return new DAL.Settings()
+            {
+                settingId = settings.settingId,
+                institutionId = settings.institutionId,
+                freeDaysNum = settings.freeDaysNum,
+                freeShiftsNum = settings.freeShiftsNum,
+            };
+        }
+
         #endregion
     }
 }
