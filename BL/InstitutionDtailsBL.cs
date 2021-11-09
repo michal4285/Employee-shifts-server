@@ -11,7 +11,7 @@ namespace BL
 {
    public class InstitutionDtailsBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
         public DTO.InstitutionDetails getInstitutionDetails(int id)
         {
             var res = NTT.InstitutionDtails.FirstOrDefault(x => x.institutionId == id);

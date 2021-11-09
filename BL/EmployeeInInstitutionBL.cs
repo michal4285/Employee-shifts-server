@@ -10,7 +10,7 @@ namespace BL
 {
     public class EmployeeInInstitutionBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
         public DTO.EmployeeInInstitution getEmployeeInInstitution(int id)
         {
             var res = NTT.EmployeeInInstitution.FirstOrDefault(x => x.employeeInInstitutionId == id);

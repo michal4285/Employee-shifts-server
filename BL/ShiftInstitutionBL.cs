@@ -9,7 +9,7 @@ namespace BL
 {
     public class ShiftInstitutionBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
 
         public List<DTO.ShiftInstitutionDTO> getInstitutionShifts(int InstitutionId)
         {

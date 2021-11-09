@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="RivkiHoolMichalProberModelStoreContainer" CdmEntityContainer="Entities1">
+  <EntityContainerMapping StorageEntityContainer="RivkiHoolMichalProberModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="Constraints">
       <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.Constraints">
         <MappingFragment StoreEntitySet="Constraints">
@@ -100,7 +100,7 @@
           <ScalarProperty Name="settingId" ColumnName="settingId" />
           <ScalarProperty Name="institutionId" ColumnName="institutionId" />
           <ScalarProperty Name="freeDaysNum" ColumnName="freeDaysNum" />
-          <ScalarProperty Name="feeShiftsNum" ColumnName="feeShiftsNum" />
+          <ScalarProperty Name="freeShiftsNum" ColumnName="freeShiftsNum" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

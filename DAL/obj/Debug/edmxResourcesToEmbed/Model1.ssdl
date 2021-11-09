@@ -92,7 +92,7 @@
     <Property Name="settingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="institutionId" Type="int" />
     <Property Name="freeDaysNum" Type="int" />
-    <Property Name="feeShiftsNum" Type="int" />
+    <Property Name="freeShiftsNum" Type="int" />
   </EntityType>
   <EntityType Name="ShiftInstitution">
     <Key>

@@ -10,7 +10,7 @@ namespace BL
 {
    public class FieldOfWorkInInstitutionBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
         public DTO.FieldOfWorkInInstitution getFieldOfWorkInInstitution(int id)
         {
             var res = NTT.FieldOfWorkInInstitution.FirstOrDefault(x => x.fieldOfWorkId == id);

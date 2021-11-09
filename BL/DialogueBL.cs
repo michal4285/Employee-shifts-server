@@ -9,7 +9,7 @@ namespace BL
 {
    public class DialogueBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
        public DTO.Dialogue getDialogue(int id)
         {
             var res = NTT.Dialogue.FirstOrDefault(x => x.dialogueId == id);

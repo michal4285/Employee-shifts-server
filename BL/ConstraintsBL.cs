@@ -10,7 +10,7 @@ namespace BL
 {
    public class ConstraintsBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
         public DTO.Constraints getConstraint(int id)
         {
             var res = NTT.Constraints.FirstOrDefault(x => x.constraintId == id);

@@ -9,7 +9,7 @@ namespace BL
 {
    public class EmployeeLimitBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
         public DTO.EmployeeLimit getEmployeeLimit(int id)
         {
             var res = NTT.EmployeeLimit.FirstOrDefault(x => x.restrictionId == id);

@@ -10,7 +10,7 @@ namespace BL
 {
     public class EmployeeDetailBL
     {
-        Entities1 NTT = new Entities1();
+        Entities NTT = new Entities();
 
         //public IEnumerable<DTO.EmployeeDetail> GetEmployeeDetail()
         //{
