@@ -19,7 +19,15 @@ namespace BL
         }
         public List<DTO.EmployeeInInstitution> GetAllEmployeeInInstitution()
         {
-            var res = NTT.EmployeeInInstitution.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.EmployeeInInstitution.Select(x => new DTO.EmployeeInInstitution
+            {
+                employeerId=x.employeerId,
+                institutionId=x.institutionId,
+                fieldOfWorkId=x.fieldOfWorkId,
+                status =x.status,
+                shiftType=x.shiftType
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.EmployeeInInstitution CreateEmployeeInInstitution(DTO.EmployeeInInstitution e)

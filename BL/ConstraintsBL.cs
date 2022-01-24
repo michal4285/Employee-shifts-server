@@ -8,7 +8,7 @@ using BL.Converters;
 
 namespace BL
 {
-   public class ConstraintsBL
+    public class ConstraintsBL
     {
         Entities NTT = new Entities();
         public DTO.Constraints getConstraint(int id)
@@ -19,7 +19,14 @@ namespace BL
         }
         public List<DTO.Constraints> GetAllConstraints()
         {
-            var res = NTT.Constraints.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.Constraints.Select(x => new DTO.Constraints
+            {
+                employeeInInstitutionId = x.employeeInInstitutionId,
+                dayInWeek = x.dayInWeek,
+                shiftId = x.shiftId,
+                dateOfCreate = x.dateOfCreate
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.Constraints CreateConstraint(DTO.Constraints c)

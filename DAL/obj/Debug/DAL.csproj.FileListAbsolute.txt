@@ -114,3 +114,24 @@ C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CoreCompi
 C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.dll
 C:\final project rivki\Employee-shifts-server\DAL\obj\Debug\DAL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\DAL.dll.config
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\DAL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\DAL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\EntityFramework.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Web.Cors.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\EntityFramework.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Net.Http.Formatting.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\bin\Debug\System.Web.Http.Cors.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\obj\Debug\DAL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DAL\obj\Debug\DAL.pdb

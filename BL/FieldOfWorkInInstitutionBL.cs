@@ -19,7 +19,15 @@ namespace BL
         }
         public List<DTO.FieldOfWorkInInstitution> GetAllFieldOfWorkInInstitution()
         {
-            var res = NTT.FieldOfWorkInInstitution.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.FieldOfWorkInInstitution.Select(x => new DTO.FieldOfWorkInInstitution
+            {
+                institutionId=x.institutionId,
+                fieldOfWorkName=x.fieldOfWorkName,
+                numOfFullTimeShift=x.numOfFullTimeShift,
+                numOfPartTimeShift=x.numOfPartTimeShift,
+                numOfEmployeesInWeeklyShift=x.numOfEmployeesInWeeklyShift
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.FieldOfWorkInInstitution CreateFieldOfWorkInInstitution(DTO.FieldOfWorkInInstitution f)

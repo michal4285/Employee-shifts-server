@@ -18,7 +18,14 @@ namespace BL
         }
         public List<DTO.Dialogue> GetAllDialogues()
         {
-            var res = NTT.Dialogue.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.Dialogue.Select(x => new DTO.Dialogue
+            {
+                employeeInInstitutionId=x.employeeInInstitutionId,
+                status=x.status,
+                text=x.text,
+                date=x.date
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.Dialogue CreateDialogue(DTO.Dialogue d)

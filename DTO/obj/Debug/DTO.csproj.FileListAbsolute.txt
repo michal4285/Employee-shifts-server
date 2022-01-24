@@ -32,3 +32,15 @@ C:\final project rivki\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CoreCompi
 C:\final project rivki\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\final project rivki\Employee-shifts-server\DTO\obj\Debug\DTO.dll
 C:\final project rivki\Employee-shifts-server\DTO\obj\Debug\DTO.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\DTO.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\DTO.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\DAL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\EntityFramework.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\DAL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\DAL.dll.config
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\bin\Debug\EntityFramework.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.pdb

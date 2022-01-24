@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using BL.Converters;
 namespace BL
 {
-   public class EmployeeLimitBL
+    public class EmployeeLimitBL
     {
         Entities NTT = new Entities();
         public DTO.EmployeeLimit getEmployeeLimit(int id)
@@ -18,7 +18,14 @@ namespace BL
         }
         public List<DTO.EmployeeLimit> GetAllEmployeeLimit()
         {
-            var res = NTT.EmployeeLimit.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.EmployeeLimit.Select(x => new DTO.EmployeeLimit
+            {
+                employeeInInstitutionId = x.employeeInInstitutionId,
+                date = x.date,
+                shiftInInstitutionId = x.shiftInInstitutionId,
+                substituteEmployeeId = x.substituteEmployeeId
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.EmployeeLimit CreateEmployeeLimit(DTO.EmployeeLimit e)

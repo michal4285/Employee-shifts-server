@@ -123,7 +123,7 @@ namespace API.Controllers
 
                 if (employee == null)
                 {
-                    res.Message = $"employee's email: {employeeDetail.employeeEmail} is already exist";
+                    res.Message = $"employee's name: {employeeDetail.employeeFirstName+employeeDetail.employeeLastName} is not succeed to update";
                 }
             }
 

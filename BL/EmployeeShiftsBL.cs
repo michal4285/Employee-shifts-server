@@ -19,7 +19,13 @@ namespace BL
         }
         public List<DTO.EmployeeShiftsDTO> getShifts()
         {
-            var res = NTT.EmployeeShifts.Select(e => DTO.DTOConvertor.ConvertToDTO(e)).ToList();
+            var res = NTT.EmployeeShifts.Select(x => new DTO.EmployeeShiftsDTO
+            {
+                employeeInInstitutionId=x.employeeInInstitutionId,
+                Date=x.Date,
+                ShiftId=x.ShiftId
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.EmployeeShiftsDTO addshift(DTO.EmployeeShiftsDTO EmployeeShiftsDTO)

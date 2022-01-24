@@ -20,7 +20,16 @@ namespace BL
         }
         public List<DTO.InstitutionDetails> GetAllInstitutionDetails()
         {
-            var res = NTT.InstitutionDtails.Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.InstitutionDtails.Select(x => new DTO.InstitutionDetails
+            {
+                institutionName=x.institutionName,
+                institutionAddress=x.institutionAddress,
+                institutionEmail=x.institutionEmail,
+                institutionPhone=x.institutionPhone,
+                institutionManagerId=x.institutionManagerId,
+                numOfShift=x.numOfShift
+            }).ToList();
+
             return res != null ? res : null;
         }
         public DTO.InstitutionDetails CreateConstraintInstitutionDetails(DTO.InstitutionDetails i)

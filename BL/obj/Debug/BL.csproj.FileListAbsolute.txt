@@ -108,3 +108,20 @@ C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.csproj.CoreCompile
 C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.csproj.CopyComplete
 C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.dll
 C:\final project rivki\Employee-shifts-server\BL\obj\Debug\BL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\BL.dll.config
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\BL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\BL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\DAL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\DTO.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\EntityFramework.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\DAL.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\DAL.dll.config
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\DTO.pdb
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\EntityFramework.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\obj\Debug\BL.csproj.CopyComplete
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\obj\Debug\BL.dll
+C:\rivkihoolFinalProject\Employee-shifts-server\BL\obj\Debug\BL.pdb

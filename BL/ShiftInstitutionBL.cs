@@ -13,7 +13,15 @@ namespace BL
 
         public List<DTO.ShiftInstitutionDTO> getInstitutionShifts(int InstitutionId)
         {
-            var res = NTT.ShiftInstitution.Where(e => e.institutionId == InstitutionId).Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.ShiftInstitution.Select(x => new DTO.ShiftInstitutionDTO
+            {
+                institutionId=x.institutionId,
+                shiftNum=x.shiftNum,
+                shiftDescription=x.shiftDescription,
+                startTime=x.startTime,
+                EndTime=x.EndTime
+            }).ToList();
+
             return res != null ? res : null;
 
         }
