@@ -27,6 +27,12 @@ namespace BL
             return res != null ? DTO.DTOConvertor.ConvertToDTO(res) : null;
         }
 
+        public DTO.EmployeeDetail GetEmployee(int id)
+        {
+            var res = NTT.EmployeeDetails.FirstOrDefault(e => e.employeeId == id);
+            return res != null ? DTO.DTOConvertor.ConvertToDTO(res) : null;
+
+        }
         public DTO.EmployeeDetail Register(DTO.EmployeeDetail employeeDetail)
         {
             var employee = NTT.EmployeeDetails.FirstOrDefault(e => e.employeeEmail == employeeDetail.employeeEmail);

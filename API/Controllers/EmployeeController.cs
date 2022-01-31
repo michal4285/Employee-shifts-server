@@ -25,7 +25,7 @@ namespace API.Controllers
                 DTO.EmployeeDetail employee = employeeDetailBL.CheckLogin(email, password);
 
 
-                
+
                 res.StatusCode = HttpStatusCode.OK;
                 res.Data = employee;
                 res.IsError = employee == null;
@@ -45,7 +45,7 @@ namespace API.Controllers
 
             return res;
         }
-      
+
         [HttpGet]
         public Response GetAll()
         {
@@ -75,6 +75,32 @@ namespace API.Controllers
         public string Get(int id)
         {
             return "value";
+        }
+        //GET: api/Employee/5
+        [HttpGet]
+        public Response GetEmployeeId(int id)
+        {
+            Response res = new Response();
+            try
+            {
+                DTO.EmployeeDetail employee = employeeDetailBL.GetEmployee(id);
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = employee;
+                res.IsError = false;
+
+                if (employee == null)
+                {
+                    res.Message = $"employee's id: {id} is already exist";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
         }
 
         // POST: api/Employee
@@ -123,7 +149,7 @@ namespace API.Controllers
 
                 if (employee == null)
                 {
-                    res.Message = $"employee's name: {employeeDetail.employeeFirstName+employeeDetail.employeeLastName} is not succeed to update";
+                    res.Message = $"employee's name: {employeeDetail.employeeFirstName + employeeDetail.employeeLastName} is not succeed to update";
                 }
             }
 
