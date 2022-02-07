@@ -10,8 +10,10 @@ namespace DTO
     {
         public int settingId { get; set; }
         public  int? institutionId { get; set; }
-        public int? freeDaysNum { get; set; }
-        public int? freeShiftsNum { get; set; }
+        public string settingName { get; set; }
+        public int? settingValueInt { get; set; }
+        public DateTime? settingValueDate { get; set; }
+        public string settingValueString { get; set; }
 
     }
 }

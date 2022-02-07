@@ -16,8 +16,11 @@ namespace DAL
     {
         public int settingId { get; set; }
         public Nullable<int> institutionId { get; set; }
-        public Nullable<int> freeDaysNum { get; set; }
-        public Nullable<int> freeShiftsNum { get; set; }
+        public string settingName { get; set; }
+        public Nullable<int> settingValueInt { get; set; }
+        public Nullable<System.DateTime> settingValueDate { get; set; }
+        public string settingValueString { get; set; }
+        
     
         public virtual InstitutionDtails InstitutionDtails { get; set; }
     }

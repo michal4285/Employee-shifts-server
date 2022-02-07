@@ -251,8 +251,11 @@ namespace DTO
             {
                 settingId = settings.settingId,
                 institutionId = settings.institutionId,
-                freeDaysNum = settings.freeDaysNum,
-                freeShiftsNum = settings.freeShiftsNum,
+                settingName = settings.settingName,
+                settingValueInt = settings.settingValueInt,
+                settingValueDate = settings.settingValueDate,
+                settingValueString = settings.settingValueString
+
             };
         }
         public static DAL.Settings ConvertToDTO(DTO.settings settings)
@@ -261,8 +264,10 @@ namespace DTO
             {
                 settingId = settings.settingId,
                 institutionId = settings.institutionId,
-                freeDaysNum = settings.freeDaysNum,
-                freeShiftsNum = settings.freeShiftsNum,
+                settingName = settings.settingName,
+                settingValueInt = settings.settingValueInt,
+                settingValueDate=settings.settingValueDate,
+                settingValueString=settings.settingValueString
             };
         }
 

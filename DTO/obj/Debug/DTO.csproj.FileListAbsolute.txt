@@ -44,3 +44,14 @@ C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CoreCom
 C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.dll
 C:\rivkihoolFinalProject\Employee-shifts-server\DTO\obj\Debug\DTO.pdb
+C:\Employee-shifts-server\DTO\bin\Debug\DTO.dll
+C:\Employee-shifts-server\DTO\bin\Debug\DTO.pdb
+C:\Employee-shifts-server\DTO\bin\Debug\DAL.dll
+C:\Employee-shifts-server\DTO\bin\Debug\EntityFramework.dll
+C:\Employee-shifts-server\DTO\bin\Debug\DAL.pdb
+C:\Employee-shifts-server\DTO\bin\Debug\DAL.dll.config
+C:\Employee-shifts-server\DTO\bin\Debug\EntityFramework.xml
+C:\Employee-shifts-server\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Employee-shifts-server\DTO\obj\Debug\DTO.dll
+C:\Employee-shifts-server\DTO\obj\Debug\DTO.pdb
