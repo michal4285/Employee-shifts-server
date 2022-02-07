@@ -20,7 +20,6 @@ namespace DAL
         public Nullable<int> settingValueInt { get; set; }
         public Nullable<System.DateTime> settingValueDate { get; set; }
         public string settingValueString { get; set; }
-        
     
         public virtual InstitutionDtails InstitutionDtails { get; set; }
     }
