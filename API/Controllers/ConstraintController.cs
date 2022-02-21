@@ -43,6 +43,30 @@ namespace API.Controllers
             return res;
         }
         [HttpGet]
+        public Response GetConstraintEmployee(int id)
+        {
+            Response res = new Response();
+            try
+            {
+                List<DTO.Constraints> constraint = constraintBL.getConstraintEmployee(id);
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = constraint;
+                res.IsError = constraint == null;
+
+                if (constraint.Count()==0)
+                    res.Message = $"you have a mistake,employeeId:{id} doesn't have constraints";
+
+            }
+            catch (Exception ex)
+            {
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
+        [HttpGet]
         public Response GetAll()
         {
             Response res = new Response();
@@ -91,7 +115,61 @@ namespace API.Controllers
             }
             return res;
         }
+        [HttpPost]
+        public Response PostConstraintDay(Constraints c)
+        {
+            Response res = new Response();
+
+            try
+            {
+                DTO.Constraints constraint = constraintBL.checkConstraint(c);
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = constraint;
+                res.IsError = false;
+
+                if (constraint == null)
+                {
+                    res.Message = $"You can't take an holiday in {c.dayInWeek},check what happend";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
+
+        [HttpPost]
+        public Response PostConstraintShift(Constraints constraint)
+        {
+            Response res = new Response();
+
+            try
+            {
+                List<DTO.Constraints> constraints = constraintBL.checkConstraintShift(constraint);
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = constraints;
+                res.IsError = false;
+
+                if (constraints == null)
+                {
+                    res.Message = $"You can't take holiday in this shift ,check what happend";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
     }
 }
+    
 
 

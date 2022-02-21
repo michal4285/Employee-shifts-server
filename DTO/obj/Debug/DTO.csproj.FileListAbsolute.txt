@@ -55,3 +55,15 @@ C:\Employee-shifts-server\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
 C:\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Employee-shifts-server\DTO\obj\Debug\DTO.dll
 C:\Employee-shifts-server\DTO\obj\Debug\DTO.pdb
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\DTO.dll
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\DTO.pdb
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\DAL.dll
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\EntityFramework.dll
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\DAL.pdb
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\DAL.dll.config
+C:\project-gibui\Employee-shifts-server\DTO\bin\Debug\EntityFramework.xml
+C:\project-gibui\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\project-gibui\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\project-gibui\Employee-shifts-server\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\project-gibui\Employee-shifts-server\DTO\obj\Debug\DTO.dll
+C:\project-gibui\Employee-shifts-server\DTO\obj\Debug\DTO.pdb

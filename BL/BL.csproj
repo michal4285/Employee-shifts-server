@@ -63,6 +63,7 @@
     <Compile Include="FieldOfWorkInInstitutionBL.cs" />
     <Compile Include="InstitutionDtailsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsBL.cs" />
     <Compile Include="ShiftInstitutionBL.cs" />
   </ItemGroup>
   <ItemGroup>
