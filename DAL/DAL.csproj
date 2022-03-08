@@ -82,6 +82,9 @@
     <Compile Include="EmployeeLimit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeMonthShifts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeShifts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

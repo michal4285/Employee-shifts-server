@@ -58,6 +58,16 @@
           <Property Name="shiftInInstitutionId" Type="int" />
           <Property Name="substituteEmployeeId" Type="int" />
         </EntityType>
+        <EntityType Name="EmployeeMonthShifts">
+          <Key>
+            <PropertyRef Name="employeeShiftId" />
+          </Key>
+          <Property Name="employeeShiftId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="startShift" Type="datetime2" Precision="7" />
+          <Property Name="endShift" Type="datetime2" Precision="7" />
+        </EntityType>
         <EntityType Name="EmployeeShifts">
           <Key>
             <PropertyRef Name="employeeShiftId" />
@@ -122,18 +132,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_Constraints_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="Constraints">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Constraints_ShiftInstitution">
           <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
           <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
@@ -194,30 +192,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EmployeeLimit_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="EmployeeLimit">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeLimit_EmployeeInInstitution1">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="EmployeeLimit">
-              <PropertyRef Name="substituteEmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EmployeeLimit_ShiftInstitution">
           <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
           <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
@@ -230,15 +204,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EmployeeSchedule_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeShifts" Type="Self.EmployeeShifts" Multiplicity="*" />
+        <Association Name="FK_EmployeeMonthShifts_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="EmployeeMonthShifts" Type="Self.EmployeeMonthShifts" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="employeeId" />
             </Principal>
-            <Dependent Role="EmployeeShifts">
-              <PropertyRef Name="employeeInInstitutionId" />
+            <Dependent Role="EmployeeMonthShifts">
+              <PropertyRef Name="employeeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -286,18 +260,6 @@
               <PropertyRef Name="institutionId" />
             </Principal>
             <Dependent Role="Settings">
-              <PropertyRef Name="institutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ShiftInstitution_InstitutionDtails">
-          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
-          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="InstitutionDtails">
-              <PropertyRef Name="institutionId" />
-            </Principal>
-            <Dependent Role="ShiftInstitution">
               <PropertyRef Name="institutionId" />
             </Dependent>
           </ReferentialConstraint>
@@ -339,16 +301,13 @@
           <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeInInstitution" EntityType="Self.EmployeeInInstitution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeLimit" EntityType="Self.EmployeeLimit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeMonthShifts" EntityType="Self.EmployeeMonthShifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FieldOfWorkInInstitution" EntityType="Self.FieldOfWorkInInstitution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InstitutionDtails" EntityType="Self.InstitutionDtails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShiftInstitution" EntityType="Self.ShiftInstitution" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="Self.FK_Constraints_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="Constraints" EntitySet="Constraints" />
-          </AssociationSet>
           <AssociationSet Name="FK_Constraints_ShiftInstitution" Association="Self.FK_Constraints_ShiftInstitution">
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
             <End Role="Constraints" EntitySet="Constraints" />
@@ -369,21 +328,13 @@
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
             <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
           </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution" Association="Self.FK_EmployeeLimit_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution1" Association="Self.FK_EmployeeLimit_EmployeeInInstitution1">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
           <AssociationSet Name="FK_EmployeeLimit_ShiftInstitution" Association="Self.FK_EmployeeLimit_ShiftInstitution">
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
             <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
           </AssociationSet>
-          <AssociationSet Name="FK_EmployeeSchedule_EmployeeInInstitution" Association="Self.FK_EmployeeSchedule_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
+          <AssociationSet Name="FK_EmployeeMonthShifts_EmployeeDetails" Association="Self.FK_EmployeeMonthShifts_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="EmployeeMonthShifts" EntitySet="EmployeeMonthShifts" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeeSchedule_ShiftInstitution" Association="Self.FK_EmployeeSchedule_ShiftInstitution">
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
@@ -401,10 +352,6 @@
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
             <End Role="Settings" EntitySet="Settings" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="Self.FK_ShiftInstitution_InstitutionDtails">
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -420,7 +367,6 @@
           <Property Name="dayInWeek" Type="Int32" />
           <Property Name="shiftId" Type="Int32" />
           <Property Name="dateOfCreate" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_Constraints_EmployeeInInstitution" FromRole="Constraints" ToRole="EmployeeInInstitution" />
           <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_Constraints_ShiftInstitution" FromRole="Constraints" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="Dialogue">
@@ -446,6 +392,7 @@
           <Property Name="employeeEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="employeePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeDetails" ToRole="EmployeeInInstitution" />
+          <NavigationProperty Name="EmployeeMonthShifts" Relationship="Self.FK_EmployeeMonthShifts_EmployeeDetails" FromRole="EmployeeDetails" ToRole="EmployeeMonthShifts" />
           <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_InstitutionDtails_EmployeeDetails" FromRole="EmployeeDetails" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="EmployeeInInstitution">
@@ -458,14 +405,10 @@
           <Property Name="fieldOfWorkId" Type="Int32" />
           <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="shiftType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Constraints" Relationship="Self.FK_Constraints_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Constraints" />
           <NavigationProperty Name="Dialogue" Relationship="Self.FK_Dialogue_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="Dialogue" />
           <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeInInstitution_EmployeeDetails" FromRole="EmployeeInInstitution" ToRole="EmployeeDetails" />
           <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="Self.FK_EmployeeInInstitution_FieldOfWorkInInstitution" FromRole="EmployeeInInstitution" ToRole="FieldOfWorkInInstitution" />
           <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_EmployeeInInstitution_InstitutionDtails" FromRole="EmployeeInInstitution" ToRole="InstitutionDtails" />
-          <NavigationProperty Name="EmployeeLimit" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
-          <NavigationProperty Name="EmployeeLimit1" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeInInstitution" ToRole="EmployeeLimit" />
-          <NavigationProperty Name="EmployeeShifts" Relationship="Self.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeInInstitution" ToRole="EmployeeShifts" />
         </EntityType>
         <EntityType Name="EmployeeLimit">
           <Key>
@@ -476,9 +419,18 @@
           <Property Name="date" Type="DateTime" Precision="3" />
           <Property Name="shiftInInstitutionId" Type="Int32" />
           <Property Name="substituteEmployeeId" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
-          <NavigationProperty Name="EmployeeInInstitution1" Relationship="Self.FK_EmployeeLimit_EmployeeInInstitution1" FromRole="EmployeeLimit" ToRole="EmployeeInInstitution" />
           <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_EmployeeLimit_ShiftInstitution" FromRole="EmployeeLimit" ToRole="ShiftInstitution" />
+        </EntityType>
+        <EntityType Name="EmployeeMonthShifts">
+          <Key>
+            <PropertyRef Name="employeeShiftId" />
+          </Key>
+          <Property Name="employeeShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="startShift" Type="DateTime" Precision="7" />
+          <Property Name="endShift" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeMonthShifts_EmployeeDetails" FromRole="EmployeeMonthShifts" ToRole="EmployeeDetails" />
         </EntityType>
         <EntityType Name="EmployeeShifts">
           <Key>
@@ -488,7 +440,6 @@
           <Property Name="employeeInInstitutionId" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="7" />
           <Property Name="ShiftId" Type="Int32" />
-          <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeSchedule_EmployeeInInstitution" FromRole="EmployeeShifts" ToRole="EmployeeInInstitution" />
           <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_EmployeeSchedule_ShiftInstitution" FromRole="EmployeeShifts" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="FieldOfWorkInInstitution">
@@ -519,7 +470,6 @@
           <NavigationProperty Name="EmployeeInInstitution" Relationship="Self.FK_EmployeeInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="EmployeeInInstitution" />
           <NavigationProperty Name="FieldOfWorkInInstitution" Relationship="Self.FK_FieldOfWorkInInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="FieldOfWorkInInstitution" />
           <NavigationProperty Name="Settings" Relationship="Self.FK_Settings_InstitutionDtails" FromRole="InstitutionDtails" ToRole="Settings" />
-          <NavigationProperty Name="ShiftInstitution" Relationship="Self.FK_ShiftInstitution_InstitutionDtails" FromRole="InstitutionDtails" ToRole="ShiftInstitution" />
         </EntityType>
         <EntityType Name="Settings">
           <Key>
@@ -546,7 +496,6 @@
           <NavigationProperty Name="Constraints" Relationship="Self.FK_Constraints_ShiftInstitution" FromRole="ShiftInstitution" ToRole="Constraints" />
           <NavigationProperty Name="EmployeeLimit" Relationship="Self.FK_EmployeeLimit_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeLimit" />
           <NavigationProperty Name="EmployeeShifts" Relationship="Self.FK_EmployeeSchedule_ShiftInstitution" FromRole="ShiftInstitution" ToRole="EmployeeShifts" />
-          <NavigationProperty Name="InstitutionDtails" Relationship="Self.FK_ShiftInstitution_InstitutionDtails" FromRole="ShiftInstitution" ToRole="InstitutionDtails" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -558,18 +507,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Constraints_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="Constraints">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Constraints_ShiftInstitution">
           <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="0..1" />
           <End Role="Constraints" Type="Self.Constraints" Multiplicity="*" />
@@ -606,6 +543,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EmployeeMonthShifts_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="EmployeeMonthShifts" Type="Self.EmployeeMonthShifts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="EmployeeMonthShifts">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InstitutionDtails_EmployeeDetails">
           <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
           <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="*" />
@@ -639,42 +588,6 @@
             </Principal>
             <Dependent Role="EmployeeInInstitution">
               <PropertyRef Name="institutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeLimit_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="EmployeeLimit">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeLimit_EmployeeInInstitution1">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeLimit" Type="Self.EmployeeLimit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="EmployeeLimit">
-              <PropertyRef Name="substituteEmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeeSchedule_EmployeeInInstitution">
-          <End Role="EmployeeInInstitution" Type="Self.EmployeeInInstitution" Multiplicity="0..1" />
-          <End Role="EmployeeShifts" Type="Self.EmployeeShifts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EmployeeInInstitution">
-              <PropertyRef Name="employeeInInstitutionId" />
-            </Principal>
-            <Dependent Role="EmployeeShifts">
-              <PropertyRef Name="employeeInInstitutionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -726,34 +639,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShiftInstitution_InstitutionDtails">
-          <End Role="InstitutionDtails" Type="Self.InstitutionDtails" Multiplicity="0..1" />
-          <End Role="ShiftInstitution" Type="Self.ShiftInstitution" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="InstitutionDtails">
-              <PropertyRef Name="institutionId" />
-            </Principal>
-            <Dependent Role="ShiftInstitution">
-              <PropertyRef Name="institutionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Constraints" EntityType="Self.Constraints" />
           <EntitySet Name="Dialogue" EntityType="Self.Dialogue" />
           <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" />
           <EntitySet Name="EmployeeInInstitution" EntityType="Self.EmployeeInInstitution" />
           <EntitySet Name="EmployeeLimit" EntityType="Self.EmployeeLimit" />
+          <EntitySet Name="EmployeeMonthShifts" EntityType="Self.EmployeeMonthShifts" />
           <EntitySet Name="EmployeeShifts" EntityType="Self.EmployeeShifts" />
           <EntitySet Name="FieldOfWorkInInstitution" EntityType="Self.FieldOfWorkInInstitution" />
           <EntitySet Name="InstitutionDtails" EntityType="Self.InstitutionDtails" />
           <EntitySet Name="Settings" EntityType="Self.Settings" />
           <EntitySet Name="ShiftInstitution" EntityType="Self.ShiftInstitution" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Constraints_EmployeeInInstitution" Association="Self.FK_Constraints_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="Constraints" EntitySet="Constraints" />
-          </AssociationSet>
           <AssociationSet Name="FK_Constraints_ShiftInstitution" Association="Self.FK_Constraints_ShiftInstitution">
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
             <End Role="Constraints" EntitySet="Constraints" />
@@ -766,6 +664,10 @@
             <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
             <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
           </AssociationSet>
+          <AssociationSet Name="FK_EmployeeMonthShifts_EmployeeDetails" Association="Self.FK_EmployeeMonthShifts_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="EmployeeMonthShifts" EntitySet="EmployeeMonthShifts" />
+          </AssociationSet>
           <AssociationSet Name="FK_InstitutionDtails_EmployeeDetails" Association="Self.FK_InstitutionDtails_EmployeeDetails">
             <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
@@ -777,18 +679,6 @@
           <AssociationSet Name="FK_EmployeeInInstitution_InstitutionDtails" Association="Self.FK_EmployeeInInstitution_InstitutionDtails">
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
             <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution" Association="Self.FK_EmployeeLimit_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeLimit_EmployeeInInstitution1" Association="Self.FK_EmployeeLimit_EmployeeInInstitution1">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeLimit" EntitySet="EmployeeLimit" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeeSchedule_EmployeeInInstitution" Association="Self.FK_EmployeeSchedule_EmployeeInInstitution">
-            <End Role="EmployeeInInstitution" EntitySet="EmployeeInInstitution" />
-            <End Role="EmployeeShifts" EntitySet="EmployeeShifts" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeeLimit_ShiftInstitution" Association="Self.FK_EmployeeLimit_ShiftInstitution">
             <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
@@ -805,10 +695,6 @@
           <AssociationSet Name="FK_Settings_InstitutionDtails" Association="Self.FK_Settings_InstitutionDtails">
             <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
             <End Role="Settings" EntitySet="Settings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShiftInstitution_InstitutionDtails" Association="Self.FK_ShiftInstitution_InstitutionDtails">
-            <End Role="InstitutionDtails" EntitySet="InstitutionDtails" />
-            <End Role="ShiftInstitution" EntitySet="ShiftInstitution" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -913,6 +799,17 @@
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="shiftInInstitutionId" ColumnName="shiftInInstitutionId" />
                 <ScalarProperty Name="substituteEmployeeId" ColumnName="substituteEmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeMonthShifts">
+            <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeMonthShifts">
+              <MappingFragment StoreEntitySet="EmployeeMonthShifts">
+                <ScalarProperty Name="employeeShiftId" ColumnName="employeeShiftId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="startShift" ColumnName="startShift" />
+                <ScalarProperty Name="endShift" ColumnName="endShift" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

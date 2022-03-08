@@ -35,6 +35,5 @@ namespace DAL
         public virtual ICollection<EmployeeLimit> EmployeeLimit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmployeeShifts> EmployeeShifts { get; set; }
-        public virtual InstitutionDtails InstitutionDtails { get; set; }
     }
 }

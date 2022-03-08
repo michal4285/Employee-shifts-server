@@ -32,6 +32,7 @@ namespace DAL
         public virtual DbSet<EmployeeDetails> EmployeeDetails { get; set; }
         public virtual DbSet<EmployeeInInstitution> EmployeeInInstitution { get; set; }
         public virtual DbSet<EmployeeLimit> EmployeeLimit { get; set; }
+        public virtual DbSet<EmployeeMonthShifts> EmployeeMonthShifts { get; set; }
         public virtual DbSet<EmployeeShifts> EmployeeShifts { get; set; }
         public virtual DbSet<FieldOfWorkInInstitution> FieldOfWorkInInstitution { get; set; }
         public virtual DbSet<InstitutionDtails> InstitutionDtails { get; set; }

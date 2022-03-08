@@ -59,6 +59,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeMonthShifts">
+      <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeMonthShifts">
+        <MappingFragment StoreEntitySet="EmployeeMonthShifts">
+          <ScalarProperty Name="employeeShiftId" ColumnName="employeeShiftId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="startShift" ColumnName="startShift" />
+          <ScalarProperty Name="endShift" ColumnName="endShift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EmployeeShifts">
       <EntityTypeMapping TypeName="RivkiHoolMichalProberModel.EmployeeShifts">
         <MappingFragment StoreEntitySet="EmployeeShifts">

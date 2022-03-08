@@ -17,11 +17,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EmployeeInInstitution()
         {
-            this.Constraints = new HashSet<Constraints>();
             this.Dialogue = new HashSet<Dialogue>();
-            this.EmployeeLimit = new HashSet<EmployeeLimit>();
-            this.EmployeeLimit1 = new HashSet<EmployeeLimit>();
-            this.EmployeeShifts = new HashSet<EmployeeShifts>();
         }
     
         public int employeeInInstitutionId { get; set; }
@@ -32,17 +28,9 @@ namespace DAL
         public string shiftType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Constraints> Constraints { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dialogue> Dialogue { get; set; }
         public virtual EmployeeDetails EmployeeDetails { get; set; }
         public virtual FieldOfWorkInInstitution FieldOfWorkInInstitution { get; set; }
         public virtual InstitutionDtails InstitutionDtails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeLimit> EmployeeLimit { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeLimit> EmployeeLimit1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeShifts> EmployeeShifts { get; set; }
     }
 }

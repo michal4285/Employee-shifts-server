@@ -20,7 +20,6 @@ namespace DAL
         public Nullable<int> shiftId { get; set; }
         public Nullable<System.DateTime> dateOfCreate { get; set; }
     
-        public virtual EmployeeInInstitution EmployeeInInstitution { get; set; }
         public virtual ShiftInstitution ShiftInstitution { get; set; }
     }
 }

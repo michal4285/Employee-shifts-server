@@ -12,14 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeLimit
+    public partial class EmployeeMonthShifts
     {
-        public int restrictionId { get; set; }
-        public Nullable<int> employeeInInstitutionId { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
-        public Nullable<int> shiftInInstitutionId { get; set; }
-        public Nullable<int> substituteEmployeeId { get; set; }
+        public int employeeShiftId { get; set; }
+        public Nullable<int> employeeId { get; set; }
+        public string title { get; set; }
+        public Nullable<System.DateTime> startShift { get; set; }
+        public Nullable<System.DateTime> endShift { get; set; }
     
-        public virtual ShiftInstitution ShiftInstitution { get; set; }
+        public virtual EmployeeDetails EmployeeDetails { get; set; }
     }
 }

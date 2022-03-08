@@ -18,6 +18,7 @@ namespace DAL
         public EmployeeDetails()
         {
             this.EmployeeInInstitution = new HashSet<EmployeeInInstitution>();
+            this.EmployeeMonthShifts = new HashSet<EmployeeMonthShifts>();
             this.InstitutionDtails = new HashSet<InstitutionDtails>();
         }
     
@@ -31,6 +32,8 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmployeeInInstitution> EmployeeInInstitution { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeeMonthShifts> EmployeeMonthShifts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InstitutionDtails> InstitutionDtails { get; set; }
     }
