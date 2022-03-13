@@ -12,7 +12,7 @@ using API.Models;
 namespace API.Controllers
 {
     [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class ConstraintController:ApiController
+    public class ConstraintController : ApiController
     {
         ConstraintsBL constraintBL = new ConstraintsBL();
 
@@ -53,7 +53,7 @@ namespace API.Controllers
                 res.Data = constraint;
                 res.IsError = constraint == null;
 
-                if (constraint.Count()==0)
+                if (constraint.Count() == 0)
                     res.Message = $"you have a mistake,employeeId:{id} doesn't have constraints";
 
             }
@@ -168,8 +168,35 @@ namespace API.Controllers
             }
             return res;
         }
+        [HttpPost]
+        public Response orderHoliday()
+        {
+            Response res = new Response();
+
+            try
+            {
+               List<Constraints> oederHoliday = constraintBL.checkHoliday();
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = oederHoliday;
+                res.IsError = false;
+
+                if (oederHoliday == null)
+                {
+                    res.Message = $"You have an error with consider the employees' holiday";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
+
     }
 }
-    
+
 
 

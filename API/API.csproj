@@ -173,6 +173,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeInInstitutionController.cs" />
     <Compile Include="Controllers\EmployeeLimitController.cs" />
+    <Compile Include="Controllers\EmployeeMonthShiftsController.cs" />
     <Compile Include="Controllers\EmployeeShiftsController.cs" />
     <Compile Include="Controllers\FieldOfWorkInInstitutionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

@@ -25,7 +25,7 @@ namespace BL
                 dayInWeek = x.dayInWeek,
                 shiftId = x.shiftId,
                 dateOfCreate = x.dateOfCreate
-            }).Where(x=>x.employeeInInstitutionId==id).ToList();
+            }).Where(x => x.employeeInInstitutionId == id).ToList();
             return res != null ? res : null;
         }
         public List<DTO.Constraints> GetAllConstraints()
@@ -52,7 +52,7 @@ namespace BL
         {
             var shiftInDay = NTT.Constraints.Count(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek && x.shiftId != 0);
             var employee = NTT.Constraints.FirstOrDefault(e => e.employeeInInstitutionId == c.employeeInInstitutionId && e.shiftId == 0);
-            var countConstraint = NTT.Constraints.Count(e => e.dayInWeek == c.dayInWeek && e.shiftId ==0);
+            var countConstraint = NTT.Constraints.Count(e => e.dayInWeek == c.dayInWeek && e.shiftId == 0);
             var settingNumDays = NTT.Settings.FirstOrDefault(x => x.settingName == "NumMissingEmployeesInDay");
             if (countConstraint < settingNumDays.settingValueInt && employee == null && shiftInDay > 0)
             {
@@ -87,7 +87,7 @@ namespace BL
                 }
 
             }
-            else if (countConstraint < settingNumDays.settingValueInt && employee == null && shiftInDay<1)
+            else if (countConstraint < settingNumDays.settingValueInt && employee == null && shiftInDay < 1)
             {
                 DAL.Constraints con = DTO.DTOConvertor.ConvertToDTO(c);
                 Constraints r = NTT.Constraints.Add(con);
@@ -95,7 +95,7 @@ namespace BL
                 return r != null ? DTO.DTOConvertor.ConvertToDTO(r) : null;
 
             }
-            else if (countConstraint < settingNumDays.settingValueInt && employee != null&&shiftInDay>0)
+            else if (countConstraint < settingNumDays.settingValueInt && employee != null && shiftInDay > 0)
             {
                 if (shiftInDay > 1)
                 {
@@ -195,6 +195,72 @@ namespace BL
             {
                 return null;
             }
+
+        }
+        public List<DTO.Constraints> checkHoliday()
+        {
+            int[] arr = new int[7];
+            for (int i = 0; i < 7; i++)
+            {
+                arr[i] = NTT.Constraints.Count(x => x.dayInWeek == (i + 1) && x.shiftId == 0);
+
+            }
+            var settingNumDays = NTT.Settings.FirstOrDefault(x => x.settingName == "NumMissingEmployeesInDay");
+            List<DTO.EmployeeDetail> list = NTT.EmployeeDetails.Select(x => new DTO.EmployeeDetail
+            {
+                employeeId = x.employeeId,
+                employeeFirstName = x.employeeFirstName,
+                employeeLastName = x.employeeLastName,
+                employeeAddress = x.employeeAddress,
+                employeePhone = x.employeePhone,
+                employeeEmail = x.employeeEmail,
+                employeePassword = x.employeePassword
+            }).ToList();
+            foreach (var item in list)
+            {
+                var emp = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == item.employeeId && x.shiftId == 0);
+                if (emp == null)
+                {
+                    for (int i = 0; i < arr.Length; i++)
+                    {
+                        if (arr[i] < settingNumDays.settingValueInt)
+                        {
+                            arr[i]++;
+                            DTO.Constraints c = new DTO.Constraints
+                            {
+                                employeeInInstitutionId = item.employeeId,
+                                dayInWeek = i + 1,
+                                shiftId = 0,
+                                dateOfCreate = DateTime.Now
+                            };
+                            DAL.Constraints con = DTO.DTOConvertor.ConvertToDTO(c);
+                            NTT.Constraints.Add(con);
+                            NTT.SaveChanges();
+                            break;
+                        }
+
+                    }
+
+                }
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] != settingNumDays.settingValueInt)
+                    return null;
+                else
+                {
+                    List<DTO.Constraints> list1 = NTT.Constraints.Select(x => new DTO.Constraints
+                    {
+                        employeeInInstitutionId = x.employeeInInstitutionId,
+                        dayInWeek = x.dayInWeek,
+                        shiftId = x.shiftId,
+                        dateOfCreate = x.dateOfCreate
+                    }).ToList();
+                    return list1;
+                }
+            }
+            return null;
 
         }
     }

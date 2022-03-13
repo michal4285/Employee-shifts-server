@@ -59,6 +59,7 @@
     <Compile Include="EmployeeDetailBL.cs" />
     <Compile Include="EmployeeInInstitutionBL.cs" />
     <Compile Include="EmployeeLimitBL.cs" />
+    <Compile Include="EmployeeMonthBL.cs" />
     <Compile Include="EmployeeShiftsBL.cs" />
     <Compile Include="FieldOfWorkInInstitutionBL.cs" />
     <Compile Include="InstitutionDtailsBL.cs" />

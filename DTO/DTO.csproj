@@ -48,6 +48,7 @@
     <Compile Include="EmployeeDetail.cs" />
     <Compile Include="EmployeeInInstitution.cs" />
     <Compile Include="EmployeeLimit.cs" />
+    <Compile Include="EmployeeMonthShifts.cs" />
     <Compile Include="EmployeeShiftsDTO.cs" />
     <Compile Include="FieldOfWorkInInstitution.cs" />
     <Compile Include="IConvertable.cs" />

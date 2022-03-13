@@ -168,7 +168,7 @@ namespace DTO
         {
             return new DTO.EmployeeLimit()
             {
-                
+
                 restrictionId = employeeLimit.restrictionId,
                 employeeInInstitutionId = employeeLimit.employeeInInstitutionId,
                 date = employeeLimit.date,
@@ -266,11 +266,37 @@ namespace DTO
                 institutionId = settings.institutionId,
                 settingName = settings.settingName,
                 settingValueInt = settings.settingValueInt,
-                settingValueDate=settings.settingValueDate,
-                settingValueString=settings.settingValueString
+                settingValueDate = settings.settingValueDate,
+                settingValueString = settings.settingValueString
             };
         }
 
+        #endregion
+        #region EmployeeMonthShifts
+        public static DTO.EmployeeMonthShifts ConvertToDTO(DAL.EmployeeMonthShifts employeeMonthShifts)
+        {
+            return new DTO.EmployeeMonthShifts()
+            {
+                employeeShiftId = employeeMonthShifts.employeeShiftId,
+                employeeId = employeeMonthShifts.employeeId,
+                title=employeeMonthShifts.title,
+                startShift=employeeMonthShifts.startShift,
+                endShift=employeeMonthShifts.endShift
+            };
+
+        }
+        public static DAL.EmployeeMonthShifts ConvertToDTO(DTO.EmployeeMonthShifts employeeMonthShifts)
+        {
+            return new DAL.EmployeeMonthShifts()
+            {
+                employeeShiftId = employeeMonthShifts.employeeShiftId,
+                employeeId = employeeMonthShifts.employeeId,
+                title = employeeMonthShifts.title,
+                startShift = employeeMonthShifts.startShift,
+                endShift = employeeMonthShifts.endShift
+            };
+
+        }
         #endregion
     }
 }
