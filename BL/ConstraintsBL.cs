@@ -255,13 +255,297 @@ namespace BL
                         employeeInInstitutionId = x.employeeInInstitutionId,
                         dayInWeek = x.dayInWeek,
                         shiftId = x.shiftId,
-                        dateOfCreate = x.dateOfCreate
+                        dateOfCreate = x.dateOfCreate,
+
                     }).ToList();
+
                     return list1;
                 }
             }
+
             return null;
 
+        }
+
+        
+        public List<DTO.EmployeeMonthShifts> checkOrderShift()
+        {
+            
+
+            bool flag = false;
+            var numEmployeeInShift = NTT.Settings.FirstOrDefault(x => x.settingName == "NumEmployeesInShift");
+            int[] arr1 = new int[7];
+            int[] arr2 = new int[7];
+            int[] arr3 = new int[7];
+            List<DTO.Constraints>[,] mat = new List<DTO.Constraints>[7, 3];
+            List<DTO.EmployeeMonthShifts>[,] mat2 = new List<DTO.EmployeeMonthShifts>[7,3];
+            List<DTO.EmployeeDetail> listEmpHaveConstraint = new List<DTO.EmployeeDetail>();
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    mat[i, j] = new List<DTO.Constraints>();
+                    mat2[i, j] = new List<DTO.EmployeeMonthShifts>();
+                }
+            }
+            List<DTO.EmployeeDetail> listEmp = NTT.EmployeeDetails.Select(x => new DTO.EmployeeDetail
+            {
+                employeeId = x.employeeId,
+                employeeFirstName = x.employeeFirstName,
+                employeeLastName = x.employeeLastName,
+                employeeAddress = x.employeeAddress,
+                employeePhone = x.employeePhone,
+                employeeEmail = x.employeeEmail,
+                employeePassword = x.employeePassword
+            }).ToList();
+
+            List<DTO.Constraints> list = NTT.Constraints.Select(x => new DTO.Constraints
+            {
+                employeeInInstitutionId = x.employeeInInstitutionId,
+                dayInWeek = x.dayInWeek,
+                shiftId = x.shiftId,
+                dateOfCreate = x.dateOfCreate
+            }).ToList();
+            foreach(var e in listEmp)
+            {
+                var emp = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == e.employeeId && x.shiftId != 0);
+                if (emp != null)
+                    listEmpHaveConstraint.Add(e);
+            }
+            foreach (var item in list)
+            {
+                for (int i = 0; i < mat.GetLength(0); i++)
+                {
+                    for (int j = 0; j < mat.GetLength(1); j++)
+                    {
+                        if (item.dayInWeek == i + 1 && item.shiftId == j + 1)
+                            mat[i, j].Add(item);
+                    }
+                }
+            }
+
+            foreach (var emp in listEmpHaveConstraint)
+            {
+                for (int i = 0; i < mat.GetLength(0); i++)
+                {
+                    var e = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == emp.employeeId && x.shiftId == 0);
+                    if (emp == null || e.dayInWeek != i + 1)
+                    {
+                        for (int j = 0; j < mat.GetLength(1); j++)
+                        {                      
+                                foreach (var c in mat[i, j])
+                                {
+                                    if (emp.employeeId == c.employeeInInstitutionId)
+                                    {
+                                        flag = true;
+                                        break;
+                                    }
+
+                                }
+                                if (flag == false)
+                                {
+                                    if (j == 0)
+                                    {
+                                        if (arr1[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr1[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                            break;
+                                        }
+                                    }
+                                    else if (j == 1)
+                                    {
+                                        if (arr2[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr2[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                            break;
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        if (arr3[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr3[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                        }
+                                    }
+                                }
+                        }
+                    }
+
+                }
+                listEmp.Remove(emp);
+            }
+            foreach (var emp in listEmp)
+            {
+                for (int i = 0; i < mat.GetLength(0); i++)
+                {
+                    var e = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == emp.employeeId && x.shiftId == 0);
+                    if (emp == null || e.dayInWeek != i + 1)
+                    {
+                        for (int j = 0; j < mat.GetLength(1); j++)
+                        {
+                                foreach (var c in mat[i, j])
+                                {
+                                    if (emp.employeeId == c.employeeInInstitutionId)
+                                    {
+                                        flag = true;
+                                        break;
+                                    }
+
+                                }
+                                if (flag == false)
+                                {
+                                    if (j == 0)
+                                    {
+                                        if (arr1[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr1[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                            break;
+                                        }
+                                    }
+                                    else if (j == 1)
+                                    {
+                                        if (arr2[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr2[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                            break;
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        if (arr3[i] < numEmployeeInShift.settingValueInt)
+                                        {
+                                            arr3[i]++;
+                                            DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
+                                            {
+                                                employeeId = emp.employeeId,
+                                                title = emp.employeeFirstName + " " + emp.employeeLastName,
+                                                startShift = DateTime.Now,
+                                                endShift = DateTime.Now,
+                                            };
+                                            mat2[i, j].Add(c);
+                                        }
+                                    }
+                                }
+                            
+                        }
+                    }
+
+                }
+            }
+            //for (int i = 0; i < mat2.GetLongLength(0); i++)
+            //{
+            //    for(int j=0;j<mat2.GetLongLength(1);j++)
+            //    {
+            //        foreach(var em in mat2[i,j])
+            //        {                                        
+            //            var con= DTO.DTOConvertor.ConvertToDTO(em);
+            //            NTT.EmployeeMonthShifts.Add(con);
+            //            NTT.SaveChanges();
+            //        }
+
+
+            //    }
+            //}
+            List<DTO.EmployeeMonthShifts> g = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
+            {
+                employeeId = x.employeeId,
+                title = x.title,
+                startShift = x.startShift,
+                endShift = x.endShift,
+            }).ToList();
+            foreach(var item in g)
+            {
+                
+                NTT.EmployeeMonthShifts.Remove(NTT.EmployeeMonthShifts.FirstOrDefault(x=>x.employeeId==item.employeeId&&item.startShift==x.startShift&&x.endShift==item.endShift));
+                NTT.SaveChanges();
+            }
+            for (int i = 1; i <= (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)); i++)
+            {
+
+                var y = (int)(new DateTime(DateTime.Now.Year, DateTime.Now.Month, i)).DayOfWeek + 1;
+                var x = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i));
+                foreach (var item in mat2[y - 1, 0])
+                {
+                    item.startShift =x;
+                    item.endShift = x;
+                    var con = DTO.DTOConvertor.ConvertToDTO(item);
+                    NTT.EmployeeMonthShifts.Add(con);
+                    NTT.SaveChanges();
+
+                }
+                foreach (var item in mat2[y - 1, 1])
+                {
+                    item.startShift = x;
+                    item.endShift = x;
+                    var con = DTO.DTOConvertor.ConvertToDTO(item);
+                    NTT.EmployeeMonthShifts.Add(con);
+                    NTT.SaveChanges();
+
+                }
+                foreach (var item in mat2[y - 1, 2])
+                {
+                    item.startShift = x;
+                    item.endShift = x;
+                    var con = DTO.DTOConvertor.ConvertToDTO(item);
+                    NTT.EmployeeMonthShifts.Add(con);
+                    NTT.SaveChanges();
+
+                }
+
+
+            }
+
+            List<DTO.EmployeeMonthShifts> listShifts = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
+            {
+                employeeId = x.employeeId,
+                title = x.title,
+                startShift = x.startShift,
+                endShift = x.endShift,
+            }).ToList();
+
+            return listShifts;
         }
     }
 }

@@ -175,7 +175,7 @@ namespace API.Controllers
 
             try
             {
-               List<Constraints> oederHoliday = constraintBL.checkHoliday();
+               List<DTO.Constraints> oederHoliday = constraintBL.checkHoliday();
 
                 res.StatusCode = HttpStatusCode.OK;
                 res.Data = oederHoliday;
@@ -184,6 +184,33 @@ namespace API.Controllers
                 if (oederHoliday == null)
                 {
                     res.Message = $"You have an error with consider the employees' holiday";
+                }
+            }
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
+        [HttpPost]
+
+        public Response orderShifts()
+        {
+            Response res = new Response();
+
+            try
+            {
+                List<DTO.EmployeeMonthShifts> orderShifts = constraintBL.checkOrderShift();
+
+                res.StatusCode = HttpStatusCode.OK;
+                res.Data = orderShifts;
+                res.IsError = false;
+
+                if (orderShifts == null)
+                {
+                    res.Message = $"You have an error with consider the employees' shifts";
                 }
             }
             catch (Exception ex)
