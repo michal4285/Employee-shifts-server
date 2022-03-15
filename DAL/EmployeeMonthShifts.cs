@@ -17,8 +17,9 @@ namespace DAL
         public int employeeShiftId { get; set; }
         public Nullable<int> employeeId { get; set; }
         public string title { get; set; }
-        public Nullable<System.DateTime> startShift { get; set; }
-        public Nullable<System.DateTime> endShift { get; set; }
+        public string startShift { get; set; }
+        public string endShift { get; set; }
+        public string color { get; set; }
     
         public virtual EmployeeDetails EmployeeDetails { get; set; }
     }

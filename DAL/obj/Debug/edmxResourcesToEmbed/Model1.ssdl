@@ -60,8 +60,9 @@
     <Property Name="employeeShiftId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="employeeId" Type="int" />
     <Property Name="title" Type="nvarchar(max)" />
-    <Property Name="startShift" Type="datetime2" Precision="7" />
-    <Property Name="endShift" Type="datetime2" Precision="7" />
+    <Property Name="startShift" Type="nvarchar(max)" />
+    <Property Name="endShift" Type="nvarchar(max)" />
+    <Property Name="color" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="EmployeeShifts">
     <Key>

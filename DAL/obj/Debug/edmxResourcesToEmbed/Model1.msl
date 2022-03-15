@@ -67,6 +67,7 @@
           <ScalarProperty Name="title" ColumnName="title" />
           <ScalarProperty Name="startShift" ColumnName="startShift" />
           <ScalarProperty Name="endShift" ColumnName="endShift" />
+          <ScalarProperty Name="color" ColumnName="color" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

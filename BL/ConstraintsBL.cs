@@ -155,37 +155,55 @@ namespace BL
                 }
                 else
                 {
-                    var res = NTT.Constraints.Select(x => new DTO.Constraints
-                    {
-                        employeeInInstitutionId = x.employeeInInstitutionId,
-                        dayInWeek = x.dayInWeek,
-                        shiftId = x.shiftId,
-                        dateOfCreate = x.dateOfCreate
-                    }).Where(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek).ToArray();
-                    for (int i = 0; i < res.Length; i++)
-                    {
-                        if (res[i].dateOfCreate > res[i + 1].dateOfCreate)
-                        {
-                            res[i + 1].constraintId = c.constraintId;
-                            res[i + 1].employeeInInstitutionId = c.employeeInInstitutionId;
-                            res[i + 1].dayInWeek = c.dayInWeek;
-                            res[i + 1].shiftId = c.shiftId;
-                            res[i + 1].dateOfCreate = c.dateOfCreate;
-                            NTT.SaveChanges();
-                            return res.ToList();
 
-                        }
-                        else
+
+
+                    //var res = NTT.Constraints.Select(x => new DTO.Constraints
+                    //{
+                    //    employeeInInstitutionId = x.employeeInInstitutionId,
+                    //    dayInWeek = x.dayInWeek,
+                    //    shiftId = x.shiftId,
+                    //    dateOfCreate = x.dateOfCreate
+                    //}).Where(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek).ToArray();
+                    var res = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek);
+                    var res1 = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek && x.shiftId != res.shiftId);
+                    //for (int i = 0; i < res.Length; i++)
+                    //{
+                    if (res.dateOfCreate > res1.dateOfCreate)
+                    {
+
+                        res1.employeeInInstitutionId = c.employeeInInstitutionId;
+                        res1.dayInWeek = c.dayInWeek;
+                        res1.shiftId = c.shiftId;
+                        res1.dateOfCreate = DateTime.Now.AddMilliseconds(DateTime.Now.Millisecond);
+                        NTT.SaveChanges();
+                        var r = NTT.Constraints.Select(x => new DTO.Constraints
                         {
-                            res[i].constraintId = c.constraintId;
-                            res[i].employeeInInstitutionId = c.employeeInInstitutionId;
-                            res[i].dayInWeek = c.dayInWeek;
-                            res[i].shiftId = c.shiftId;
-                            res[i].dateOfCreate = c.dateOfCreate;
-                            NTT.SaveChanges();
-                            return res.ToList();
-                        }
+                            employeeInInstitutionId = x.employeeInInstitutionId,
+                            dayInWeek = x.dayInWeek,
+                            shiftId = x.shiftId,
+                            dateOfCreate = x.dateOfCreate
+                        }).Where(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek).ToList();
+                        return r;
                     }
+                    else
+                    {
+
+                        res.employeeInInstitutionId = c.employeeInInstitutionId;
+                        res.dayInWeek = c.dayInWeek;
+                        res.shiftId = c.shiftId;
+                        res.dateOfCreate = DateTime.Now.AddMilliseconds(DateTime.Now.Millisecond);
+                        NTT.SaveChanges();
+                        var r = NTT.Constraints.Select(x => new DTO.Constraints
+                        {
+                            employeeInInstitutionId = x.employeeInInstitutionId,
+                            dayInWeek = x.dayInWeek,
+                            shiftId = x.shiftId,
+                            dateOfCreate = x.dateOfCreate
+                        }).Where(x => x.employeeInInstitutionId == c.employeeInInstitutionId && x.dayInWeek == c.dayInWeek).ToList();
+                        return r;
+                    }
+                    //}
 
                 }
                 return null;
@@ -197,7 +215,8 @@ namespace BL
             }
 
         }
-        public List<DTO.Constraints> checkHoliday()
+    
+public List<DTO.Constraints> checkHoliday()
         {
             int[] arr = new int[7];
             for (int i = 0; i < 7; i++)
@@ -282,6 +301,7 @@ namespace BL
             List<DTO.EmployeeDetail> listEmpHaveConstraint = new List<DTO.EmployeeDetail>();
             for (int i = 0; i < 7; i++)
             {
+                
                 for (int j = 0; j < 3; j++)
                 {
                     mat[i, j] = new List<DTO.Constraints>();
@@ -351,10 +371,10 @@ namespace BL
                                             arr1[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id = emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start = DateTime.Now.ToString(),
+                                                end = DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                             break;
@@ -367,10 +387,10 @@ namespace BL
                                             arr2[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id = emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start  = DateTime.Now.ToString(),
+                                                end  = DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                             break;
@@ -384,10 +404,10 @@ namespace BL
                                             arr3[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id = emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start  = DateTime.Now.ToString(),
+                                                end= DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                         }
@@ -426,10 +446,10 @@ namespace BL
                                             arr1[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id = emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start  = DateTime.Now.ToString(),
+                                                end  = DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                             break;
@@ -442,10 +462,10 @@ namespace BL
                                             arr2[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id = emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start  = DateTime.Now.ToString(),
+                                                end  = DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                             break;
@@ -459,10 +479,10 @@ namespace BL
                                             arr3[i]++;
                                             DTO.EmployeeMonthShifts c = new DTO.EmployeeMonthShifts
                                             {
-                                                employeeId = emp.employeeId,
+                                                id= emp.employeeId,
                                                 title = emp.employeeFirstName + " " + emp.employeeLastName,
-                                                startShift = DateTime.Now,
-                                                endShift = DateTime.Now,
+                                                start  = DateTime.Now.ToString(),
+                                                end  = DateTime.Now.ToString(),
                                             };
                                             mat2[i, j].Add(c);
                                         }
@@ -490,26 +510,27 @@ namespace BL
             //}
             List<DTO.EmployeeMonthShifts> g = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
             {
-                employeeId = x.employeeId,
+                id = x.employeeId,
                 title = x.title,
-                startShift = x.startShift,
-                endShift = x.endShift,
+                start = x.startShift,
+                end= x.endShift,
             }).ToList();
             foreach(var item in g)
             {
                 
-                NTT.EmployeeMonthShifts.Remove(NTT.EmployeeMonthShifts.FirstOrDefault(x=>x.employeeId==item.employeeId&&item.startShift==x.startShift&&x.endShift==item.endShift));
+                NTT.EmployeeMonthShifts.Remove(NTT.EmployeeMonthShifts.FirstOrDefault(x=>x.employeeId==item.id&&item.start==x.startShift&&x.endShift==item.end));
                 NTT.SaveChanges();
             }
             for (int i = 1; i <= (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)); i++)
             {
 
                 var y = (int)(new DateTime(DateTime.Now.Year, DateTime.Now.Month, i)).DayOfWeek + 1;
-                var x = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i));
+                var x = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
                 foreach (var item in mat2[y - 1, 0])
                 {
-                    item.startShift =x;
-                    item.endShift = x;
+                    item.start = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,08,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.end = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,16,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.color = "rgb(165, 223, 172)";
                     var con = DTO.DTOConvertor.ConvertToDTO(item);
                     NTT.EmployeeMonthShifts.Add(con);
                     NTT.SaveChanges();
@@ -517,8 +538,9 @@ namespace BL
                 }
                 foreach (var item in mat2[y - 1, 1])
                 {
-                    item.startShift = x;
-                    item.endShift = x;
+                    item.start = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,16,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.end = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,00,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.color = "rgb(197, 106, 152)";
                     var con = DTO.DTOConvertor.ConvertToDTO(item);
                     NTT.EmployeeMonthShifts.Add(con);
                     NTT.SaveChanges();
@@ -526,8 +548,9 @@ namespace BL
                 }
                 foreach (var item in mat2[y - 1, 2])
                 {
-                    item.startShift = x;
-                    item.endShift = x;
+                    item.start = (new DateTime(DateTime.Now.Year, DateTime.Now.Month,i,00,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.end = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,08,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.color = "rgb(163, 168, 235)";
                     var con = DTO.DTOConvertor.ConvertToDTO(item);
                     NTT.EmployeeMonthShifts.Add(con);
                     NTT.SaveChanges();
@@ -539,10 +562,11 @@ namespace BL
 
             List<DTO.EmployeeMonthShifts> listShifts = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
             {
-                employeeId = x.employeeId,
+                id = x.employeeId,
                 title = x.title,
-                startShift = x.startShift,
-                endShift = x.endShift,
+                start = x.startShift,
+                end = x.endShift,
+                color=x.color,
             }).ToList();
 
             return listShifts;

@@ -56,7 +56,7 @@ namespace BL
 
                 NTT.SaveChanges();
 
-                return null;
+                return employee != null ? DTO.DTOConvertor.ConvertToDTO(employee) : null;
 
                 //NTT.EmployeeDetails.Remove(NTT.EmployeeDetails.FirstOrDefault(e => e.employeeEmail == employeeDetail.employeeEmail));
                 //var res = NTT.EmployeeDetails.Add(employee);

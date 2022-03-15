@@ -168,7 +168,7 @@ namespace API.Controllers
             }
             return res;
         }
-        [HttpPost]
+        [HttpGet]
         public Response orderHoliday()
         {
             Response res = new Response();
@@ -194,7 +194,7 @@ namespace API.Controllers
             }
             return res;
         }
-        [HttpPost]
+        [HttpGet]
 
         public Response orderShifts()
         {

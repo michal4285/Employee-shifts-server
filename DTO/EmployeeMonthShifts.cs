@@ -8,10 +8,11 @@ namespace DTO
 {
     public class EmployeeMonthShifts
     {
-        public int employeeShiftId { get; set; }
-        public int? employeeId { get; set; }
+        //public int employeeShiftId { get; set; }
+        public int? id { get; set; }
         public string title { get; set; }
-        public DateTime? startShift { get; set; }
-        public DateTime? endShift { get; set; }
+        public string start { get; set; }
+        public string end { get; set; }
+        public string color { get; set; }
     }
 }

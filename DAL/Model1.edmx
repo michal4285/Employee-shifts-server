@@ -65,8 +65,9 @@
           <Property Name="employeeShiftId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employeeId" Type="int" />
           <Property Name="title" Type="nvarchar(max)" />
-          <Property Name="startShift" Type="datetime2" Precision="7" />
-          <Property Name="endShift" Type="datetime2" Precision="7" />
+          <Property Name="startShift" Type="nvarchar(max)" />
+          <Property Name="endShift" Type="nvarchar(max)" />
+          <Property Name="color" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="EmployeeShifts">
           <Key>
@@ -428,8 +429,9 @@
           <Property Name="employeeShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employeeId" Type="Int32" />
           <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="startShift" Type="DateTime" Precision="7" />
-          <Property Name="endShift" Type="DateTime" Precision="7" />
+          <Property Name="startShift" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="endShift" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeMonthShifts_EmployeeDetails" FromRole="EmployeeMonthShifts" ToRole="EmployeeDetails" />
         </EntityType>
         <EntityType Name="EmployeeShifts">
@@ -810,6 +812,7 @@
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="startShift" ColumnName="startShift" />
                 <ScalarProperty Name="endShift" ColumnName="endShift" />
+                <ScalarProperty Name="color" ColumnName="color" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

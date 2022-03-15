@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="17b1c02cbd434278a52b1be228df9ddc" Name="Diagram1">
+      <Diagram DiagramId="bbcd82117645406db0f818efdd783026" Name="Diagram1">
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Constraints" Width="1.5" PointX="14" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Dialogue" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeDetails" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeInInstitution" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Dialogue" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeDetails" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeInInstitution" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeLimit" Width="1.5" PointX="14" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeMonthShifts" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.EmployeeShifts" Width="1.5" PointX="14" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.InstitutionDtails" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Settings" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.FieldOfWorkInInstitution" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.InstitutionDtails" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RivkiHoolMichalProberModel.Settings" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.ShiftInstitution" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RivkiHoolMichalProberModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="RivkiHoolMichalProberModel.FK_Constraints_ShiftInstitution" ManuallyRouted="false" />

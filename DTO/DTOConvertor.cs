@@ -133,7 +133,7 @@ namespace DTO
                 employeeInInstitutionId = constraint.employeeInInstitutionId,
                 dayInWeek = constraint.dayInWeek,
                 shiftId = constraint.shiftId,
-                dateOfCreate = constraint.dateOfCreate
+                dateOfCreate = DateTime.Now.AddMilliseconds(DateTime.Now.Millisecond)
             };
         }
         #endregion
@@ -277,11 +277,12 @@ namespace DTO
         {
             return new DTO.EmployeeMonthShifts()
             {
-                employeeShiftId = employeeMonthShifts.employeeShiftId,
-                employeeId = employeeMonthShifts.employeeId,
+                //employeeShiftId = employeeMonthShifts.employeeShiftId,
+                id = employeeMonthShifts.employeeId,
                 title=employeeMonthShifts.title,
-                startShift=employeeMonthShifts.startShift,
-                endShift=employeeMonthShifts.endShift
+                start=employeeMonthShifts.startShift,
+                end=employeeMonthShifts.endShift,
+                color= employeeMonthShifts.color
             };
 
         }
@@ -289,11 +290,11 @@ namespace DTO
         {
             return new DAL.EmployeeMonthShifts()
             {
-                employeeShiftId = employeeMonthShifts.employeeShiftId,
-                employeeId = employeeMonthShifts.employeeId,
+                employeeId = employeeMonthShifts.id,
                 title = employeeMonthShifts.title,
-                startShift = employeeMonthShifts.startShift,
-                endShift = employeeMonthShifts.endShift
+                startShift = employeeMonthShifts.start,
+                endShift = employeeMonthShifts.end,
+                color= employeeMonthShifts.color
             };
 
         }

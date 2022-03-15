@@ -70,8 +70,9 @@
     <Property Name="employeeShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="employeeId" Type="Int32" />
     <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="startShift" Type="DateTime" Precision="7" />
-    <Property Name="endShift" Type="DateTime" Precision="7" />
+    <Property Name="startShift" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="endShift" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeMonthShifts_EmployeeDetails" FromRole="EmployeeMonthShifts" ToRole="EmployeeDetails" />
   </EntityType>
   <EntityType Name="EmployeeShifts">

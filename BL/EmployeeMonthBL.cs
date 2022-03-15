@@ -13,7 +13,14 @@ namespace BL
 
         public List<DTO.EmployeeMonthShifts> getUserShifts(int userID)
         {
-            var res = NTT.EmployeeMonthShifts.Where(e => e.employeeId == userID).Select(x => DTO.DTOConvertor.ConvertToDTO(x)).ToList();
+            var res = NTT.EmployeeMonthShifts.Where(e => e.employeeId == userID).Select(x => new DTO.EmployeeMonthShifts
+            {
+                id = x.employeeId,
+                title = x.title,
+                start = x.startShift,
+                end = x.endShift,
+                color = x.color
+            }).ToList();
             return res != null ? res : null;
 
         }
@@ -21,10 +28,11 @@ namespace BL
         {
             var res = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
             {
-                employeeId = x.employeeId,
+                id = x.employeeId,
                 title = x.title,
-                startShift = x.startShift,
-                endShift=x.endShift
+                start = x.startShift,
+                end=x.endShift,
+                color=x.color
             }).ToList();
 
             return res != null ? res : null;
