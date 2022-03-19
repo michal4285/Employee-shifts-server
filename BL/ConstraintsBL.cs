@@ -348,8 +348,9 @@ public List<DTO.Constraints> checkHoliday()
             {
                 for (int i = 0; i < mat.GetLength(0); i++)
                 {
+                    flag = false;
                     var e = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == emp.employeeId && x.shiftId == 0);
-                    if (emp == null || e.dayInWeek != i + 1)
+                    if (e == null||e!=null&&e.dayInWeek!=i+1)
                     {
                         for (int j = 0; j < mat.GetLength(1); j++)
                         {                      
@@ -423,8 +424,9 @@ public List<DTO.Constraints> checkHoliday()
             {
                 for (int i = 0; i < mat.GetLength(0); i++)
                 {
+                    flag = false;
                     var e = NTT.Constraints.FirstOrDefault(x => x.employeeInInstitutionId == emp.employeeId && x.shiftId == 0);
-                    if (emp == null || e.dayInWeek != i + 1)
+                    if (e==null||e != null && e.dayInWeek != i + 1)
                     {
                         for (int j = 0; j < mat.GetLength(1); j++)
                         {
@@ -539,7 +541,7 @@ public List<DTO.Constraints> checkHoliday()
                 foreach (var item in mat2[y - 1, 1])
                 {
                     item.start = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,16,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
-                    item.end = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,00,00,00)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
+                    item.end = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, i,23,59,59)).ToString(("yyyy-MM-dd'T'HH:mm:ss"));
                     item.color = "rgb(197, 106, 152)";
                     var con = DTO.DTOConvertor.ConvertToDTO(item);
                     NTT.EmployeeMonthShifts.Add(con);

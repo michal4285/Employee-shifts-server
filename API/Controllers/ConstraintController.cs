@@ -130,7 +130,7 @@ namespace API.Controllers
 
                 if (constraint == null)
                 {
-                    res.Message = $"You can't take an holiday in {c.dayInWeek},check what happend";
+                    res.Message = $"You can't take an holiday in {c.dayInWeek} day,check what happend";
                 }
             }
             catch (Exception ex)
