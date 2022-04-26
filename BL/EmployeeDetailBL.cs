@@ -67,7 +67,7 @@ namespace BL
             return null;
         }
         public List<DTO.EmployeeDetail> GetAllEmloyees()
-        {
+        { 
             var res = NTT.EmployeeDetails.Select(x => new DTO.EmployeeDetail
             {
                 employeeAddress = x.employeeAddress,

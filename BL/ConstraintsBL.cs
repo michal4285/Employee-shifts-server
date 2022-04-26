@@ -11,6 +11,55 @@ namespace BL
     public class ConstraintsBL
     {
         Entities NTT = new Entities();
+
+        public bool changeOrNot()
+        {
+            var day = NTT.Settings.FirstOrDefault(x => x.settingName == "DayOfChangeShifts");
+            List<DTO.EmployeeMonthShifts> listShifts = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
+            {
+                id = x.employeeId,
+                title = x.title,
+                start = x.startShift,
+                end = x.endShift,
+                color = x.color,
+            }).ToList();
+            if (listShifts.Count()== 0)
+                return true;
+            var max = Convert.ToDateTime(listShifts[0].start);
+            foreach (var item in listShifts)
+            {
+                var d = Convert.ToDateTime(item.start);
+                if (d.Month > max.Month)
+                    max = d;
+            }
+            //var xxx = (maxStartShift).Substring(0, 10);
+
+            if (max.Month == DateTime.Now.Month || DateTime.Now.Day < day.settingValueInt)
+            {
+                return false;
+            }
+            return true;
+
+        }
+        public bool delete()
+        {
+            List<DTO.Constraints> list = NTT.Constraints.Select(x => new DTO.Constraints
+            {
+                constraintId = x.constraintId,
+                employeeInInstitutionId = x.employeeInInstitutionId,
+                dayInWeek = x.dayInWeek,
+                shiftId = x.shiftId,
+                dateOfCreate = x.dateOfCreate
+
+            }).ToList();
+            foreach (var item in list)
+            {
+                NTT.Constraints.Remove(NTT.Constraints.FirstOrDefault(x=>x.constraintId==item.constraintId));
+                NTT.SaveChanges();
+            }
+            return true;
+        }
+
         public DTO.Constraints getConstraint(int id)
         {
             var res = NTT.Constraints.FirstOrDefault(x => x.constraintId == id);
@@ -510,19 +559,19 @@ public List<DTO.Constraints> checkHoliday()
 
             //    }
             //}
-            List<DTO.EmployeeMonthShifts> g = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
-            {
-                id = x.employeeId,
-                title = x.title,
-                start = x.startShift,
-                end= x.endShift,
-            }).ToList();
-            foreach(var item in g)
-            {
+            //List<DTO.EmployeeMonthShifts> g = NTT.EmployeeMonthShifts.Select(x => new DTO.EmployeeMonthShifts
+            //{
+            //    id = x.employeeId,
+            //    title = x.title,
+            //    start = x.startShift,
+            //    end= x.endShift,
+            //}).ToList();
+            //foreach(var item in g)
+            //{
                 
-                NTT.EmployeeMonthShifts.Remove(NTT.EmployeeMonthShifts.FirstOrDefault(x=>x.employeeId==item.id&&item.start==x.startShift&&x.endShift==item.end));
-                NTT.SaveChanges();
-            }
+            //    NTT.EmployeeMonthShifts.Remove(NTT.EmployeeMonthShifts.FirstOrDefault(x=>x.employeeId==item.id&&item.start==x.startShift&&x.endShift==item.end));
+            //    NTT.SaveChanges();
+            //}
             for (int i = 1; i <= (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)); i++)
             {
 

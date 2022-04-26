@@ -15,8 +15,56 @@ namespace API.Controllers
     public class ConstraintController : ApiController
     {
         ConstraintsBL constraintBL = new ConstraintsBL();
+        [HttpGet]
 
-        //GET api/Constraint
+        public Response orderSchedule()
+        {
+            Response res = new Response();
+
+            try
+            {
+                bool change = false;
+                bool delete = false;
+                change = constraintBL.changeOrNot();
+                if (change == true)
+                {
+                    List<DTO.Constraints> orderHoliday = constraintBL.checkHoliday();
+                    List<DTO.EmployeeMonthShifts> orderShifts = constraintBL.checkOrderShift();
+                    delete = constraintBL.delete();
+
+                    res.StatusCode = HttpStatusCode.OK;
+                    res.Data = orderShifts;
+                    res.IsError = false;
+
+                    if (orderHoliday == null)
+                    {
+                        res.Message = $"You have an error with consider the employees' holiday";
+                    }
+                    if (orderShifts == null)
+                    {
+                        res.Message = res.Message + "and" + $"You have an error with consider the employees' shifts";
+                    }
+                    if (delete == false)
+                    {
+                        res.Message = res.Message + "and" + $"You have an error with delete the employees' constraints";
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                res.StatusCode = HttpStatusCode.OK;
+                res.IsError = true;
+                res.Message = ex.ToString();
+            }
+            return res;
+        }
+     
+ 
+
+
+//GET api/Constraint
 
         [HttpGet]
         public Response GetConstraint(int id)
@@ -175,7 +223,7 @@ namespace API.Controllers
 
             try
             {
-               List<DTO.Constraints> oederHoliday = constraintBL.checkHoliday();
+                List<DTO.Constraints> oederHoliday = constraintBL.checkHoliday();
 
                 res.StatusCode = HttpStatusCode.OK;
                 res.Data = oederHoliday;
@@ -194,8 +242,8 @@ namespace API.Controllers
             }
             return res;
         }
-        [HttpGet]
 
+        [HttpGet]
         public Response orderShifts()
         {
             Response res = new Response();

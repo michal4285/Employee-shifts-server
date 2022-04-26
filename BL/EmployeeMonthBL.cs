@@ -21,7 +21,8 @@ namespace BL
                 end = x.endShift,
                 color = x.color
             }).ToList();
-            return res != null ? res : null;
+
+          return res != null ? res : null;
 
         }
         public List<DTO.EmployeeMonthShifts> getShifts()
